@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
+    <!-- APP主要色 -->
+    <color name="light_orange">#F9A400</color>
+    <color name="colorPrimaryDark">#d9d9d9</color>
+
+    <!-- 统一分割线颜色 -->
+    <color name="divider_color">#E5E5E5</color>
+
+    <color name="title_bar_bg_color">#A1A1A1</color>
+    <color name="activity_back_color">#D6D8DB</color>
+    <color name="activity_fore_color">#FFFFFF</color>
+    <color name="login_blue">#546E7A</color>
+
+    <color name="user_view_bg">#f3f3f3</color>
+    <color name="item_divider_color">#BDBDBD</color>
+
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color>
+    <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color>
+    <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="cn_background_transparent">#70000000</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="crop__selector_focused">#77000000</color>
+    <color name="black">#ff000000</color>
+
+
+    <color name="update_percentage_color">#0098eb</color>
+    <color name="dark_gray">#CED9DD</color>
+    <color name="light_gray">#E2E7EA</color>
+
+
+    <!-- 白板笔颜色-->
+    <color name="wb_pen_of_teacher">#cd007ac4</color>
+    <color name="wb_red_pen_of_teacher">#ff0000</color>
+    <color name="wb_pen_of_student">#cdff9e00</color>
+
+    <color name="context_color">#555555</color>
+
+
+    <color name="gray_text_color">#b6bdbe</color>
+    <color name="suspend_window_bg">#999999</color>
+    <color name="whiteboard_screen_text_dark_color">#546e7a</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="ccc">#cccccc</color>
+    <color name="text_grey">#999999</color>
+    <color name="label_background">#96131313</color>
+    <color name="orange">#e47139</color>
+
+
+    <color name="text_black">#333333</color>
+    <color name="text_gray">#888888</color>
+    <color name="active_vol_indicator_bg">#404040</color>
+    <color name="normal_vol_indicator">#66bb6a</color>
+    <color name="lag_vol_indicator">#f9a213</color>
+    <color name="offline_vol_indicator_bg">#c4c4c4</color>
+
+    <color name="common_dialog_bg">#FFFFFF</color>
+
+    <!-- 学生预约相关颜色值，开始 -->
+    <color name="cal_header_text_color">#ffcba6</color>
+    <color name="cal_header_background_color">#f3f3f3</color>
+    <color name="appt_teachers_list_split_line">#dddddd</color>
+    <color name="appt_dark_text">#666666</color>
+    <color name="appt_light_text">#999999</color>
+    <color name="appt_checkbox_non_checked">#bbbbbb</color>
+
+    <!-- 问题列表页相关颜色 -->
+    <color name="top_bar_text_selected_color">#ffffff</color>
+    <color name="top_bar_text_normal_color">#b3ffd6b9</color>
+
+    <!--作业相关颜色-->
+    <color name="purple_color">#FFC195E6</color>
+    <color name="button_yellow">#FFFF8C0E</color>
+
+    <!--定义一些不方便在xml里写在drawable后面的颜色-->
+    <color name="color_f3f3f3">#F3F3F3</color>
+    <color name="color_f8f8f8">#F8F8F8</color>
+    <color name="color_bdbdbd">#BDBDBD</color>
+    <color name="color_bbbbbb">#BBBBBB</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_e7e7e7">#E7E7E7</color>
+    <color name="color_bababa">#bababa</color>
+    <color name="color_fbfbfb">#FBFBFB</color>
+
+    <color name="text_gray_999999">#999999</color>
+    <color name="seekbar_bottom">#666666</color>
+    <color name="green_grade">#6a9b1e</color>
+    <color name="label_text_color">#bcc3c9</color>
+    <color name="tab_background" >#192533</color>
+    <color name="grade_text_color" >#5f850e</color>
+    <color name="type_color" >#808080</color>
+
+</resources>

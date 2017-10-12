@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout
+        android:id="@+id/coming_movie_refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ptr_background="@drawable/win_bottom_bg"
+        app:ptr_rocketAnimDuration="1000">
+
+        <com.example.administrator.newmovie.Review.ComingMovieRecyclerView
+            android:id="@+id/coming_movie_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.example.administrator.newmovie.Review.ComingMovieRecyclerView>
+
+    </com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout>
+
+    <TextView
+        android:id="@+id/coming_moive_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="9月9日" />
+
+</RelativeLayout>

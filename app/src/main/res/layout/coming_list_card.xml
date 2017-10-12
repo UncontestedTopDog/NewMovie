@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_height="140dp">
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="22.5dp"
+        android:background="#CCCCCC" />
+
+    <LinearLayout
+        android:id="@+id/comming_time_layout"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/circle_course_time"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_coming_time_md"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textColor="@color/color_666666"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_coming_time_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_666666"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/movie_poster_layout"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/comming_time_layout">
+
+        <ImageView
+            android:id="@+id/movie_poster"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/coming_movie_test" />
+
+        <ImageView
+            android:id="@+id/has_forenotice"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/homefeed_play_big" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/movie_poster_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/coming_movie_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/movie_poster"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:text="缝纫机乐队"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:id="@+id/wanted_type"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignLeft="@id/coming_movie_name"
+            android:layout_below="@id/coming_movie_name"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/wanted_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="927人想看"
+                android:textColor="@color/color_666666"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/type_color"
+                android:text="- 喜剧 / 剧情"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignLeft="@id/coming_movie_name"
+            android:layout_below="@id/wanted_type"
+            android:layout_marginTop="7dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导演：大鹏" />
+
+            <TextView
+                android:id="@+id/actor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:ellipsize="end"
+                android:layout_marginLeft="5dp"
+                android:text="主演：大鹏/乔杉" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

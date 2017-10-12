@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="imageTypeKey" type="id" />
+    <item name="imageLoadedKey" type="id" />
+    <item name="buttonTagKey" type="id" />
+</resources>

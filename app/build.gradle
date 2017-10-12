@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion target_sdk_version
+    buildToolsVersion build_tools_version
+    defaultConfig {
+        applicationId "com.example.administrator.newmovie"
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '25.0.0'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile lib_support_v4
+    compile lib_recyclerview
+    compile lib_support_annotations
+    compile lib_appcompat_v7
+    compile "com.android.support:cardview-v7:$android_support_lib_version"
+
+    compile lib_rxjava
+    compile lib_rxandroid
+
+    compile(lib_rxlifecycle) {
+        exclude group: 'com.android.support'
+    }
+    compile(lib_rxlifecycle_components) {
+        exclude group: 'com.android.support'
+    }
+    compile(lib_rxbinding) {
+        exclude group: 'com.android.support'
+    }
+
+    compile lib_gson
+    compile lib_okhttp
+    compile lib_retrofit
+    compile lib_retrofit_gson
+    compile lib_retrofit_rxjava
+    compile lib_glide
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:24.0.0'
+    compile 'com.cleveroad:fireworkypulltorefresh:1.0.3'
+//    compile 'fm.jiecao:jiecaovideoplayer:4.8.3'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.zhy:base-adapter:3.0.3'
+    compile 'cn.jzvd:jiaozivideoplayer:6.0.2'
+    compile 'com.github.pinguo-zhouwei:MZBannerView:v2.0.0'
+}
