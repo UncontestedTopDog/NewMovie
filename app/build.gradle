@@ -50,10 +50,10 @@ dependencies {
     compile lib_retrofit_gson
     compile lib_retrofit_rxjava
     compile lib_glide
+    //    compile 'fm.jiecao:jiecaovideoplayer:4.8.3'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:24.0.0'
     compile 'com.cleveroad:fireworkypulltorefresh:1.0.3'
-//    compile 'fm.jiecao:jiecaovideoplayer:4.8.3'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.zhy:base-adapter:3.0.3'
     compile 'cn.jzvd:jiaozivideoplayer:6.0.2'

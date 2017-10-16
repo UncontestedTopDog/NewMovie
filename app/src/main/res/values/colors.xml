@@ -103,10 +103,11 @@
 
     <color name="text_gray_999999">#999999</color>
     <color name="seekbar_bottom">#666666</color>
-    <color name="green_grade">#6a9b1e</color>
+    <color name="green_grade">#639d0b</color>
     <color name="label_text_color">#bcc3c9</color>
     <color name="tab_background" >#192533</color>
     <color name="grade_text_color" >#5f850e</color>
     <color name="type_color" >#808080</color>
+    <color name="poster_bg" >#64b7b4b4</color>
 
 </resources>
