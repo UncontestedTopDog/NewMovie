@@ -5,23 +5,21 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.newmovie.MovieDetailActivity">
 
+    <ImageView
+        android:id="@+id/poster_bg"
+        android:src="@drawable/poster_gaosi_bg"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
     <RelativeLayout
         android:id="@+id/r1"
+        android:paddingBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="252dp">
-
-        <ImageView
-            android:id="@+id/poster_bg"
-            android:src="@drawable/poster_gaosi_bg"
-            android:scaleType="fitXY"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
+        android:layout_height="300dp">
 
         <RelativeLayout
+            android:id="@+id/r_left"
             android:padding="9dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
@@ -103,19 +101,6 @@
                 android:layout_alignParentBottom="true"
                 android:layout_margin="9dp" />
 
-            <TextView
-                android:id="@+id/grade"
-                android:background="@color/green_grade"
-                android:text="10.0"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
         </RelativeLayout>
 
         <RelativeLayout
@@ -147,26 +132,22 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/r_left"
+            android:layout_toEndOf="@+id/r_left">
+            <com.example.administrator.newmovie.GradeProgress
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:id="@+id/seek_bar"
+                android:layout_width="1dp"
+                android:layout_height="200dp"/>
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
-    <com.example.administrator.newmovie.GradeProgress
-        android:id="@+id/seek_bar"
-        android:layout_below="@+id/r1"
-        android:layout_width="1dp"
-        android:layout_height="100dp"/>
-
-    <Button
-        android:id="@+id/btn1"
-        android:text="1"
-        android:layout_below="@+id/seek_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btn2"
-        android:layout_below="@+id/btn1"
-        android:text="2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
 </RelativeLayout>

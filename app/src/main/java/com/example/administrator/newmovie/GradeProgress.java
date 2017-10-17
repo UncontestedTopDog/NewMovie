@@ -19,7 +19,7 @@ import android.view.View;
 
 public class GradeProgress extends View {
     Paint paint ;
-    int width ,height,height2 ;
+    int w ,h,h2,h3,h4 ;
     int max = 100 ;
     int progress ;
     public GradeProgress(Context context) {
@@ -43,12 +43,13 @@ public class GradeProgress extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.icon_rocket);
-        width = bitmap1.getWidth();// 宽度值
-        height = MeasureSpec.getSize(heightMeasureSpec);// 高度值
-        height2 = bitmap1.getHeight();
-        Log.i("WWWWW",width+" "+height+" "+widthMeasureSpec+" "+heightMeasureSpec);
-        setMeasuredDimension(width, height+height2);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.icon_rocket);
+        w = bitmap.getWidth();// 宽度值
+        h = MeasureSpec.getSize(heightMeasureSpec);// 高度值
+        h2 = bitmap.getHeight() ;
+        h4 = h - w ;
+        h3 = h4 - h2 ;
+        setMeasuredDimension(w, h);
     }
 
     @Override
@@ -58,15 +59,47 @@ public class GradeProgress extends View {
         paint.setColor(getResources().getColor(R.color.grade_progress_bg));                    //设置画笔颜色
         paint.setStrokeWidth((float) 3.0);              //线宽
         paint.setStyle(Paint.Style.FILL);                   //空心效果
+
         RectF r2 = new RectF();                           //RectF对象
-        r2.left = width / 4;                                 //左边
+        r2.left = w / 4;                                 //左边
         r2.top = 0;                                 //上边
-        r2.right = width * 3 / 4;                                   //右边
-        r2.bottom = height+height2;                              //下边
-        canvas.drawRoundRect(r2, width / 4, width / 4, paint);        //绘制圆角矩形
-        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_rocket);
-        if (!bitmap1.isRecycled())
-            canvas.drawBitmap(bitmap1, 0, height - height * progress / max, paint);
+        r2.right = w * 3 / 4;                                   //右边
+        r2.bottom = h4;                              //下边
+        canvas.drawRoundRect(r2, w / 4, w / 4, paint);        //绘制圆角矩形
+
+        RectF r3 = new RectF();                           //RectF对象
+        r3.left = w / 4;                                 //左边
+        r3.top = h3 - h3 * progress / max;                                 //上边
+        r3.right = w * 3 / 4;                                   //右边
+        r3.bottom = h4;                              //下边
+        paint.setColor(getResources().getColor(R.color.light_orange));
+        canvas.drawRoundRect(r3, w / 4, w / 4, paint);        //绘制圆角矩形
+
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_rocket);
+        if (!bitmap.isRecycled())
+            canvas.drawBitmap(bitmap, 0, h3 - h3 * progress / max , paint);
+
+//        paint.setColor(Color.BLUE);
+//        RectF r4 = new RectF(0, h4, w, h);
+//        canvas.drawRect(r4, paint);
+//        paint.setColor(Color.RED);
+//        paint.setTextSize(w);
+//        canvas.drawText(progress+"", 0, h4+paint.getTextSize(), paint);
+
+        Rect targetRect = new Rect(0, h4, w, h);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setStrokeWidth(3);
+        paint.setTextSize(50);
+        String testString = progress+"";
+//        paint.setColor(Color.CYAN);
+//        canvas.drawRect(targetRect, paint);
+        paint.setColor(Color.RED);
+        Paint.FontMetricsInt fontMetrics = paint.getFontMetricsInt();
+        // 转载请注明出处：http://blog.csdn.net/hursing
+        int baseline = (targetRect.bottom + targetRect.top - fontMetrics.bottom - fontMetrics.top) / 2;
+        // 下面这行是实现水平居中，drawText对应改为传入targetRect.centerX()
+        paint.setTextAlign(Paint.Align.CENTER);
+        canvas.drawText(testString, targetRect.centerX(), baseline, paint);
         super.onDraw(canvas);
     }
 
@@ -86,7 +119,7 @@ public class GradeProgress extends View {
                     progress++;
                     postInvalidate();
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(50);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
