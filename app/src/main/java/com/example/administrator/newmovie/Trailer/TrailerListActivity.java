@@ -1,6 +1,8 @@
 package com.example.administrator.newmovie.Trailer;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.view.WindowManager;
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
 import com.example.administrator.newmovie.MovieManager;
 import com.example.administrator.newmovie.R;
+import com.trello.rxlifecycle.components.support.RxFragmentActivity;
 
 import java.util.List;
 
@@ -17,7 +20,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-public class TrailerListActivity extends AppCompatActivity {
+public class TrailerListActivity extends RxFragmentActivity {
 
     private int movieid ;
     private List<TrailerData.VideoListBean> mTrailerData ;
@@ -28,11 +31,6 @@ public class TrailerListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //设置无标题
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //设置全屏
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_trailer_list);
         trailerList = (TrailerRecyclerView) findViewById(R.id.trailer_list);
         mFireworkyPullToRefreshLayout = (FireworkyPullToRefreshLayout) findViewById(R.id.trailer_refreshlayout);
@@ -65,5 +63,10 @@ public class TrailerListActivity extends AppCompatActivity {
                         Log.e("MAIN",throwable.toString());
                     }
                 });
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }

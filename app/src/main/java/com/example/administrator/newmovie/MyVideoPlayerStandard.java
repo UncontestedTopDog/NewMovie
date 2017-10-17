@@ -1,11 +1,14 @@
 package com.example.administrator.newmovie;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import cn.jzvd.JZUserAction;
+import cn.jzvd.JZUtils;
 import cn.jzvd.JZVideoPlayerStandard;
 
 
@@ -51,11 +54,12 @@ public class MyVideoPlayerStandard extends JZVideoPlayerStandard {
 
     @Override
     public void onClick(View v) {
-        int i = v.getId();
-        if (i == cn.jzvd.R.id.fullscreen) {
-            Log.i(TAG, "onClick fullscreen [" + this.hashCode() + "] ");
-            return ;
-        }
+//        int i = v.getId();
+//        if (i == cn.jzvd.R.id.fullscreen) {
+//            if (!(currentScreen == SCREEN_WINDOW_FULLSCREEN)) {
+//                JZUtils.setRequestedOrientation(getContext(), ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+//            }
+//        }
         super.onClick(v);
     }
 
@@ -89,5 +93,10 @@ public class MyVideoPlayerStandard extends JZVideoPlayerStandard {
     public void startWindowFullscreen() {
         super.startWindowFullscreen();
         timeLength.setVisibility(INVISIBLE);
+    }
+
+    @Override
+    public void autoFullscreen(float x) {
+//        super.autoFullscreen(x);
     }
 }

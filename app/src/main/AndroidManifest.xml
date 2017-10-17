@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".MovieDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -40,7 +40,7 @@
             android:name=".Trailer.TrailerListActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
-        <activity android:name=".MovieDetailActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
