@@ -14,11 +14,14 @@ import rx.Observable;
  */
 
 public class MovieService {
+
+    static String MTIME_URL = "https://api-m.mtime.cn/Showtime/";
+    static String MTIME_DETAIL_URL = "https://ticket-api-m.mtime.cn/movie/";
+
     public static Observable<ShowingMovie> getShowingMovieByLocationId(final int locationid) {
 
-        String BASE_URL = "https://api-m.mtime.cn/Showtime/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(MTIME_URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -28,9 +31,8 @@ public class MovieService {
 
     public static Observable<ComingMovie> getComingMovieByLocationId(final int locationid) {
 
-        String BASE_URL = "https://api-m.mtime.cn/Movie/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(MTIME_URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -40,14 +42,24 @@ public class MovieService {
 
     public static Observable<TrailerData> getTrailerByPageIndexAndMovieId(int pageindex, int movieid) {
 
-        String BASE_URL = "https://api-m.mtime.cn/Movie/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(MTIME_URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         return retrofit.create(IService.class).getTrailerByPageIndexAndMovieId(pageindex,movieid);
+    }
+
+    public static Observable<MovieDetail> getDetailByLocationIdAndmovieId(int locationId, int movieId) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(MTIME_DETAIL_URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(IService.class).getDetailByLocationIdAndmovieId(locationId,movieId);
     }
 
     private interface IService {
@@ -63,8 +75,16 @@ public class MovieService {
 
         @GET("Video.api")
         Observable<TrailerData> getTrailerByPageIndexAndMovieId(
-                @Query("pageIndex") int pageindex,
-                @Query("movieId") int movieid);
+                @Query("pageIndex") int pageIndex,
+                @Query("movieId") int movieId
+        );
+
+        @GET("detail.api")
+        Observable<MovieDetail> getDetailByLocationIdAndmovieId(
+                @Query("locationId") int locationId,
+                @Query("movieId") int movieId
+        );
+
     }
 
 }

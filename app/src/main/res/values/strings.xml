@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyMovie</string>
     <string name="net_error_notice">网络连接不可用，请检查您的网络设置</string>
+    <string name="synopsis">剧情：改编自真实事件，讲述天才高中生小琳专门为同学作弊牟取暴利，她接下一个天价委托，要在国际会考上跨国为富家公子作弊，小琳找另一名记忆力极佳的天才学生班克，策划一场跨时区的完美作弊！</string>
 </resources>

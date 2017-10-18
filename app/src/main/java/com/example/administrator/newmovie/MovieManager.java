@@ -18,16 +18,20 @@ public class MovieManager {
         return mMovieManager;
     }
 
-    public Observable<ShowingMovie> getShowingMovieByLocationId(@NonNull int locationid) {
-        return MovieService.getShowingMovieByLocationId(locationid);
+    public Observable<ShowingMovie> getShowingMovieByLocationId(@NonNull int locationId) {
+        return MovieService.getShowingMovieByLocationId(locationId);
     }
 
-    public Observable<ComingMovie> getComingMovieByLocationId(@NonNull int locationid) {
-        return MovieService.getComingMovieByLocationId(locationid);
+    public Observable<ComingMovie> getComingMovieByLocationId(@NonNull int locationId) {
+        return MovieService.getComingMovieByLocationId(locationId);
     }
 
-    public Observable<TrailerData> getTrailerByPageIndexAndMovieId(@NonNull int pageindex, @NonNull int movieid) {
-        return MovieService.getTrailerByPageIndexAndMovieId(pageindex, movieid);
+    public Observable<TrailerData> getTrailerByPageIndexAndMovieId(@NonNull int pageIndex, @NonNull int movieId) {
+        return MovieService.getTrailerByPageIndexAndMovieId(pageIndex, movieId);
+    }
+
+    public Observable<MovieDetail> getDetailByLocationIdAndmovieId(@NonNull int locationId, @NonNull int movieId) {
+        return MovieService.getDetailByLocationIdAndmovieId(locationId, movieId);
     }
 
 }

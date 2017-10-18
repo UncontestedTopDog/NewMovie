@@ -39,13 +39,13 @@ public class TrailerListActivity extends RxFragmentActivity {
         mFireworkyPullToRefreshLayout.setOnRefreshListener(new FireworkyPullToRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getTrailerByLocationIdAndMovieId(1, movieid);
+                getTrailerByPageIndexAndMovieId(1, movieid);
             }
         });
-        getTrailerByLocationIdAndMovieId(1, movieid);
+        getTrailerByPageIndexAndMovieId(1, movieid);
     }
 
-    private void getTrailerByLocationIdAndMovieId(int pageindex , final int movieid) {
+    private void getTrailerByPageIndexAndMovieId(int pageindex , final int movieid) {
         MovieManager.INSTANCE()
                 .getTrailerByPageIndexAndMovieId(pageindex,movieid)
                 .subscribeOn(Schedulers.newThread())
@@ -59,7 +59,7 @@ public class TrailerListActivity extends RxFragmentActivity {
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        getTrailerByLocationIdAndMovieId(1,movieid);
+                        getTrailerByPageIndexAndMovieId(1,movieid);
                         Log.e("MAIN",throwable.toString());
                     }
                 });
