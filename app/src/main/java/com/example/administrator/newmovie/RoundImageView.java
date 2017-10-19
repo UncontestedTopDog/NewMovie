@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
@@ -20,6 +21,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
+import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 
 /**
  * Created by Administrator on 2017/10/19.
@@ -51,6 +53,7 @@ public class RoundImageView extends ImageView {
         width = ta.getInt(R.styleable.RoundImageView_width, 1);
         color = ta.getColor(R.styleable.RoundImageView_color, Color.WHITE);
         style = ta.getInt(R.styleable.RoundImageView_style, 1);
+        Log.i("ASDADASDA",width+"");
         ta.recycle();
     }
 
@@ -95,8 +98,14 @@ public class RoundImageView extends ImageView {
         //如果是.9图也无法显示，直接返回
         if(drawable.getClass() == NinePatchDrawable.class)
             return;
-        Bitmap b = ((BitmapDrawable)(drawable)).getBitmap();
-        b = b.copy(Bitmap.Config.ARGB_8888,true);
+        Bitmap b = null ;
+        try{
+            b = ((BitmapDrawable) drawable).getBitmap();
+        }
+        catch (ClassCastException e){
+            b = ((GlideBitmapDrawable) drawable).getBitmap();
+        }
+        Bitmap bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
         //获取控件的宽高
         if (defaultWidth == 0) {
             defaultWidth = getWidth();
@@ -106,7 +115,7 @@ public class RoundImageView extends ImageView {
         }
         //半径的等于宽高中较小的一边的一半
         int radius = (defaultHeight > defaultWidth ? defaultWidth :defaultHeight )/2;
-        Bitmap roundBitmap = handlePicture(b, radius);
+        Bitmap roundBitmap = handlePicture(bitmap, radius);
         canvas.drawBitmap(roundBitmap,0,0,null);
         Paint paint = new Paint();
         paint.setAntiAlias(true);//设置抗锯齿
@@ -114,11 +123,23 @@ public class RoundImageView extends ImageView {
         paint.setDither(true);//设置防抖动
         paint.setColor(color);
         paint.setStrokeWidth(width);
-        if (style==1)
-            canvas.drawCircle(radius,radius,radius,paint);
+        if (style==1){
+            Path path = new Path();
+            path.moveTo(radius,0);
+            path.quadTo(0,0,0,radius);
+            path.quadTo(0,2*radius,radius,2*radius);
+            path.quadTo(2*radius,2*radius,2*radius,radius);
+            path.quadTo(2*radius,0,radius,0);
+            canvas.drawPath(path,paint);
+        }
         else if (style==0){
-            Rect rect = new Rect(0,0,2*radius,2*radius);
-            canvas.drawRect(rect,paint);
+            Path path = new Path();
+            path.moveTo(0,0);
+            path.lineTo(0,2*radius);
+            path.lineTo(2*radius,2*radius);
+            path.lineTo(2*radius,0);
+            path.lineTo(0,0);
+            canvas.drawPath(path,paint);
         }
 
     }

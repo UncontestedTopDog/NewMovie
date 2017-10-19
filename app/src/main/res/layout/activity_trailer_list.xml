@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context="com.example.administrator.newmovie.Trailer.TrailerListActivity">
+
+    <com.example.administrator.newmovie.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.example.administrator.newmovie.TitleBar>
 
     <com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout
         android:id="@+id/trailer_refreshlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:ptr_background="@drawable/night_sky_bg"
+        app:ptr_rocketAnimDuration="1000">
 
         <com.example.administrator.newmovie.Trailer.TrailerRecyclerView
             android:id="@+id/trailer_list"

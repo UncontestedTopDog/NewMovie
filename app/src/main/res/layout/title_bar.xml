@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.administrator.newmovie.Trailer.TrailerListActivity">
-    
+    android:background="@color/app_mian_color"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:layout_height="50dp">
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_margin="5dp"
+        android:src="@drawable/white_back"
+        android:background="@color/transparent"
+        android:scaleType="fitXY"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:id="@+id/trailer_title"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="羞羞的铁拳预告片"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
 
     <com.example.administrator.newmovie.MyVideoPlayerStandard
         android:id="@+id/trailer_player"
-        android:layout_width="360dp"
-        android:layout_height="202dp"/>
-    <TextView
-        android:id="@+id/title"
-        android:text="功夫瑜伽 歌舞排练特辑"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="202dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.example.administrator.newmovie.RoundImageView
+            android:id="@+id/image"
+            android:src="@drawable/night_sky_bg"
+            android:layout_margin="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:color="@color/wb_red_pen_of_teacher"
+            app:width="1"
+            app:style="1" />
+
+        <TextView
+            android:id="@+id/trailer_title"
+            android:gravity="center_vertical"
+            android:textSize="15dp"
+            android:text="123"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:lines="1" />
+        <LinearLayout
+            android:id="@+id/l1"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/share"
+                android:background="@color/transparent"
+                android:src="@drawable/share"
+                android:scaleType="fitXY"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <ImageButton
+                android:id="@+id/like"
+                android:background="@color/transparent"
+                android:src="@drawable/collect_default"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

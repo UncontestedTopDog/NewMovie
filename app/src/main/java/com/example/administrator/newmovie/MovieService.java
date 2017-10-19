@@ -15,13 +15,10 @@ import rx.Observable;
 
 public class MovieService {
 
-    static String MTIME_URL = "https://api-m.mtime.cn/Showtime/";
-    static String MTIME_DETAIL_URL = "https://ticket-api-m.mtime.cn/movie/";
-
     public static Observable<ShowingMovie> getShowingMovieByLocationId(final int locationid) {
-
+        String URL = "https://api-m.mtime.cn/Showtime/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(MTIME_URL)
+                .baseUrl(URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -31,8 +28,9 @@ public class MovieService {
 
     public static Observable<ComingMovie> getComingMovieByLocationId(final int locationid) {
 
+        String URL = "https://api-m.mtime.cn/Movie/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(MTIME_URL)
+                .baseUrl(URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -42,8 +40,9 @@ public class MovieService {
 
     public static Observable<TrailerData> getTrailerByPageIndexAndMovieId(int pageindex, int movieid) {
 
+        String URL = "https://api-m.mtime.cn/Movie/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(MTIME_URL)
+                .baseUrl(URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -53,8 +52,9 @@ public class MovieService {
 
     public static Observable<MovieDetail> getDetailByLocationIdAndmovieId(int locationId, int movieId) {
 
+        String URL = "https://ticket-api-m.mtime.cn/movie/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(MTIME_DETAIL_URL)
+                .baseUrl(URL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

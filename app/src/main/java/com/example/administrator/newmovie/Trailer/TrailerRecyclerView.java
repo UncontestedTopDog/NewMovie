@@ -1,6 +1,7 @@
 package com.example.administrator.newmovie.Trailer;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 
 public class TrailerRecyclerView extends RecyclerView {
-    private List<TrailerData.VideoListBean> mTrailerDatas ; 
+    private List<TrailerData.VideoListBean> mTrailerDatas ;
     private TrailerAdapter adapter;
     public TrailerRecyclerView(Context context) {
         super(context);
@@ -37,7 +38,7 @@ public class TrailerRecyclerView extends RecyclerView {
         linearLayoutManager.setOrientation(VERTICAL);
         setLayoutManager(linearLayoutManager);
     }
-    
+
     public void bindData(List<TrailerData.VideoListBean> trailerDatas){
         this.mTrailerDatas = trailerDatas ;
         if (adapter == null){
@@ -69,4 +70,5 @@ public class TrailerRecyclerView extends RecyclerView {
             }
         }
     }
+
 }

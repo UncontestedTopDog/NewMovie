@@ -2,6 +2,8 @@ package com.example.administrator.newmovie.Review;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +15,8 @@ import com.example.administrator.newmovie.ImageHelper;
 import com.example.administrator.newmovie.R;
 import com.example.administrator.newmovie.ShowingMovie;
 import com.example.administrator.newmovie.Trailer.TrailerListActivity;
+
+import java.io.ByteArrayOutputStream;
 
 /**
  * Created by Administrator on 2017/9/18.
@@ -68,6 +72,7 @@ public class ShowingListCard extends RelativeLayout {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(),TrailerListActivity.class);
+                intent.putExtra("MOVIENAME",showingMovie.getT());
                 intent.putExtra("MOVIEID",showingMovie.getId());
                 getContext().startActivity(intent);
             }
