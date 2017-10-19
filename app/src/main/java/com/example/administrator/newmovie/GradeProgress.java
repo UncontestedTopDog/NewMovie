@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -99,6 +100,7 @@ public class GradeProgress extends View {
         int baseline = (targetRect.bottom + targetRect.top - fontMetrics.bottom - fontMetrics.top) / 2;
         // 下面这行是实现水平居中，drawText对应改为传入targetRect.centerX()
         paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTypeface(Typeface.MONOSPACE);
         canvas.drawText(testString, targetRect.centerX(), baseline, paint);
         super.onDraw(canvas);
     }
@@ -116,10 +118,12 @@ public class GradeProgress extends View {
             @Override
             public void run() {
                 while (progress < i) {
-                    progress++;
+                    progress+=3;
+                    if (progress>i)
+                        progress=i;
                     postInvalidate();
                     try {
-                        Thread.sleep(50);
+                        Thread.sleep(20);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

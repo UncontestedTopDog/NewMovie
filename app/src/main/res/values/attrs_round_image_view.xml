@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CircularImageView Custom Styling -->
+    <declare-styleable name="RoundImageView">
+
+        <!-- Whether or not to draw a circular border around the image. -->
+        <attr name="picture" format="reference" />
+
+        <attr name="width" format="integer" />
+
+        <attr name="style" format="integer" />
+
+        <attr name="color" format="color" />
+
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageViewStyle">
+        <attr name="roundImageViewDefault" format="reference"/>
+    </declare-styleable>
+</resources>

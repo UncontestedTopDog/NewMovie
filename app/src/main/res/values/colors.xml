@@ -110,5 +110,6 @@
     <color name="type_color" >#808080</color>
     <color name="poster_bg" >#64b7b4b4</color>
     <color name="grade_progress_bg">#E1E9F2</color>
+    <color name="app_mian_color">#192533</color>
 
 </resources>

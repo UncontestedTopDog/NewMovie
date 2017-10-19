@@ -1,14 +1,17 @@
 package com.example.administrator.newmovie.Home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.administrator.newmovie.ImageHelper;
+import com.example.administrator.newmovie.MovieDetailActivity;
 import com.example.administrator.newmovie.R;
 import com.example.administrator.newmovie.ShowingMovie;
 
@@ -27,6 +30,8 @@ public class MovieCard extends RelativeLayout {
     private TextView label;
     private TextView grade;
     private TextView name;
+    private LinearLayout mainLayout ;
+    private int movieId;
 
     public MovieCard(Context context) {
         super(context);
@@ -45,10 +50,19 @@ public class MovieCard extends RelativeLayout {
 
     private void initView() {
         inflate(getContext(), R.layout.showing_movie_card, this);
+        mainLayout = (LinearLayout) findViewById(R.id.main_layout);
         poster = (ImageView) findViewById(R.id.showing_movie_poster);
         label = (TextView) findViewById(R.id.label);
         grade = (TextView) findViewById(R.id.showing_movie_grade);
         name = (TextView) findViewById(R.id.showing_movie_name);
+        mainLayout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MovieDetailActivity.class);
+                intent.putExtra("MOVIEID",movieId);
+                getContext().startActivity(intent);
+            }
+        });
     }
 
     public boolean bindData(final ShowingMovie.MsBean showingMovie) {
@@ -62,6 +76,8 @@ public class MovieCard extends RelativeLayout {
             public void onClick(View view) {
             }
         });
+
+        movieId = showingMovie.getId();
 
         ImageHelper.loadImageIntoImageView(getContext(), showingMovie.getImg(), poster);
 
