@@ -1,6 +1,7 @@
 package com.example.administrator.newmovie;
 
 
+import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +18,15 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.Home.HomeFragment;
 import com.example.administrator.newmovie.Homework.HomeworkFragment;
 import com.example.administrator.newmovie.Me.MeFragment;
 import com.example.administrator.newmovie.NetWork.NetworkHelper;
 import com.example.administrator.newmovie.Review.ReViewFragment;
+import com.example.administrator.newmovie.Utils.TimeUtil;
+
+import java.util.Date;
 
 public class MainActivity extends BaseActivity {
 
@@ -56,6 +62,12 @@ public class MainActivity extends BaseActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         mNetErrorNoticeBar = (RelativeLayout) findViewById(R.id.net_error_notice_bar);
+
+        try {
+            MovieManager.INSTANCE().getTimeMovieIdByMovieName("天才枪手", TimeUtil.getCurrentTime());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         fakeStatus = findViewById(R.id.fake_status_bar);
         mHomePageTab = (TextView) findViewById(R.id.home_textview);
         mReviewTab = (TextView) findViewById(R.id.review_textview);
