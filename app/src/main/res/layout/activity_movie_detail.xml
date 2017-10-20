@@ -118,9 +118,9 @@
                         android:layout_margin="9dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/bad_genius"
-                        app:color="@color/wb_red_pen_of_teacher"
-                        app:width="3"
-                        app:style="1"
+                        app:color="@color/white"
+                        app:width="10"
+                        app:style="0"
                         />
 
                 </RelativeLayout>

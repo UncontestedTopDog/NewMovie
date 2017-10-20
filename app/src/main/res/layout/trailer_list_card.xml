@@ -21,8 +21,9 @@
             android:layout_margin="10dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:color="@color/wb_red_pen_of_teacher"
-            app:width="1"
+            app:color="@color/white"
+            app:margin="0.5"
+            app:width="5"
             app:style="1" />
 
         <TextView
