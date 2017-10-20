@@ -18,6 +18,7 @@ import com.example.administrator.newmovie.CustomView.GradeProgress;
 import com.example.administrator.newmovie.CustomView.LoadingView;
 import com.example.administrator.newmovie.Data.MovieDetail;
 import com.example.administrator.newmovie.Data.MovieManager;
+import com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -38,6 +39,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private boolean b = true;
     private MovieDetail mMovieDetail;
     private LoadingView loadingView ;
+    private DirectorAndActorBrierfCard directorAndActorBrierfCard ;
     private FireworkyPullToRefreshLayout mFireworkyPullToRefreshLayout;
     private int movieId ;
 
@@ -58,6 +60,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         releaseTime = (TextView) findViewById(R.id.release_time);
         poster = (ImageView) findViewById(R.id.poster);
         loadingView = (LoadingView) findViewById(R.id.loading);
+        directorAndActorBrierfCard = (DirectorAndActorBrierfCard) findViewById(R.id.director_and_actor_brierf_card);
         mFireworkyPullToRefreshLayout = (FireworkyPullToRefreshLayout) findViewById(R.id.fireworkypulltorefreshlayout);
         mFireworkyPullToRefreshLayout.setOnRefreshListener(new FireworkyPullToRefreshLayout.OnRefreshListener() {
             @Override
@@ -148,6 +151,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         releaseTime.setText(s);
         Glide.with(this).load(movieDetail.getData().getBasic().getImg()).into(poster);
         loadingView.setVisibility(View.GONE);
+        directorAndActorBrierfCard.bindData(movieDetail.getData().getBasic().getActors(),movieDetail.getData().getBasic().getDirector());
     }
 
 }

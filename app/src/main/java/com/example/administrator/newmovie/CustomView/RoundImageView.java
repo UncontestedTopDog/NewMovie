@@ -55,11 +55,11 @@ public class RoundImageView extends ImageView {
 
     private void init(AttributeSet attrs) {
         TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.RoundImageView);
-        width = ta.getInt(R.styleable.RoundImageView_width, 1);
-        color = ta.getColor(R.styleable.RoundImageView_color, Color.WHITE);
-        style = ta.getInt(R.styleable.RoundImageView_style, CIRCLE);
-        margin = ta.getFloat(R.styleable.RoundImageView_margin, 0);
-        margincolor = ta.getInt(R.styleable.RoundImageView_margincolor, Color.GRAY);
+        setWidth(ta.getInt(R.styleable.RoundImageView_width, 1));
+        setColor(ta.getColor(R.styleable.RoundImageView_color, Color.WHITE));
+        setStyle(ta.getInt(R.styleable.RoundImageView_style, CIRCLE));
+        setMargin(ta.getFloat(R.styleable.RoundImageView_margin, 0));
+        setMargincolor(ta.getInt(R.styleable.RoundImageView_margincolor, Color.GRAY));
         ta.recycle();
     }
 
@@ -173,4 +173,23 @@ public class RoundImageView extends ImageView {
         return resultbitmap;
     }
 
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public void setStyle(int style) {
+        this.style = style;
+    }
+
+    public void setMargin(float margin) {
+        this.margin = margin;
+    }
+
+    public void setMargincolor(int margincolor) {
+        this.margincolor = margincolor;
+    }
 }

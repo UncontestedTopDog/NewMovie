@@ -10,7 +10,7 @@ public class MovieDetail {
 
     /**
      * code : 1
-     * data : {"advertisement":{"advList":[{"advTag":"","endDate":1512057599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城缝纫机乐队+商城直男的心思","type":"203","typeName":"影片详情页banner2","url":"https://static4da.mtime.cn/feature/mobile/banner/2017/0929/frjzn750210m.html"}],"count":1,"error":"","success":true},"basic":{"actors":[{"actorId":913378,"img":"http://img31.mtime.cn/ph/2014/09/01/170748.64755972_1280X720X2.jpg","name":"范·迪塞尔","nameEn":"Vin Diesel","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162613.85098094.jpg","roleName":"桑德·凯奇"},{"actorId":893008,"img":"http://img31.mtime.cn/ph/2014/03/13/164116.22404345_1280X720X2.jpg","name":"甄子丹","nameEn":"Donnie Yen","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162631.30237748.jpg","roleName":"项"},{"actorId":1403701,"img":"http://img31.mtime.cn/ph/2016/04/05/153734.26333599_1280X720X2.jpg","name":"迪皮卡·帕度柯妮","nameEn":"Deepika Padukone","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163611.99195116.jpg","roleName":"赛琳娜"},{"actorId":1763914,"img":"http://img5.mtime.cn/ph/2017/02/08/172048.77104443_1280X720X2.jpg","name":"鲁比·罗丝","nameEn":"Ruby Rose","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162801.28633700.jpg","roleName":"阿黛尔"},{"actorId":1981491,"img":"http://img5.mtime.cn/ph/2017/08/21/103819.54514950_1280X720X2.jpg","name":"吴亦凡","nameEn":"Kris Wu","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162650.25424635.jpg","roleName":"DJ尼克斯"},{"actorId":1266158,"img":"http://img31.mtime.cn/ph/2016/05/04/162943.45619387_1280X720X2.jpg","name":"妮娜·杜波夫","nameEn":"Nina Dobrev","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163459.85286563.jpg","roleName":"贝基"},{"actorId":913101,"img":"http://img31.mtime.cn/ph/2014/03/14/152328.88324192_1280X720X2.jpg","name":"塞缪尔·杰克逊","nameEn":"Samuel L. Jackson","roleImg":"http://img5.mtime.cn/mg/2017/02/09/143611.45346521.jpg","roleName":"吉布森"},{"actorId":938310,"img":"http://img31.mtime.cn/ph/2014/02/22/202102.28239250_1280X720X2.jpg","name":"托尼·贾","nameEn":"Tony Jaa","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163434.84663336.jpg","roleName":"塔隆"},{"actorId":915029,"img":"http://img5.mtime.cn/ph/2017/01/12/165011.48068899_1280X720X2.jpg","name":"托妮·科莱特","nameEn":"Toni Collette","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163402.87655748.jpg","roleName":"马珂"},{"actorId":926008,"img":"http://img31.mtime.cn/ph/2016/04/07/144735.68017937_1280X720X2.jpg","name":"罗伊·麦克凯恩","nameEn":"Rory McCann","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163308.86236332.jpg","roleName":"泰尼逊"},{"actorId":2201494,"img":"http://img5.mtime.cn/ph/2016/11/02/092530.84997401_1280X720X2.jpg","name":"尼基·詹姆","nameEn":"Nicky Jam","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163152.53635568.jpg","roleName":"拉撒路"},{"actorId":1416487,"img":"http://img31.mtime.cn/ph/2016/08/29/184141.26902742_1280X720X2.jpg","name":"迈克尔·比斯平","nameEn":"Michael Bisping","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163040.43362207.jpg","roleName":"霍克"},{"actorId":2098727,"img":"http://img31.mtime.cn/ph/2015/07/01/114143.59711468_1280X720X2.jpg","name":"内马尔","nameEn":"Neymar","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163524.98203922.jpg","roleName":"内马尔"},{"actorId":903983,"img":"http://img31.mtime.cn/ph/2014/02/22/194147.64436994_1280X720X2.jpg","name":"艾斯·库珀","nameEn":"Ice Cube","roleImg":"","roleName":"达里斯"},{"actorId":2084677,"img":"http://img31.mtime.cn/ph/2015/09/09/101940.19419320_1280X720X2.jpg","name":"赫敏·科菲尔德","nameEn":"Hermione Corfield","roleImg":"","roleName":"安斯利"},{"actorId":921201,"img":"http://img31.mtime.cn/ph/2014/04/15/111254.75720606_1280X720X2.jpg","name":"艾尔·斯帕恩扎","nameEn":"Al Sapienza","roleImg":"","roleName":"CIA Director"},{"actorId":1232892,"img":"http://img5.mtime.cn/ph/2017/01/05/145035.65755647_1280X720X2.jpg","name":"","nameEn":"Helena-Alexis Seymour","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218074,"img":"http://img31.mtime.cn/ph/2016/08/29/184313.10828827_1280X720X2.jpg","name":"","nameEn":"Megan Soo","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218075,"img":"http://img5.mtime.cn/ph/2017/01/05/144739.37346974_1280X720X2.jpg","name":"","nameEn":"Kristen Kurnik","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":1023991,"img":"http://img5.mtime.cn/ph/2017/01/05/144625.10720932_1280X720X2.jpg","name":"","nameEn":"Gary 'Si-Jo' Foo","roleImg":"","roleName":"NSA Contractor       (uncredited)"}],"award":{"awardList":[],"totalNominateAward":0,"totalWinAward":0},"commentSpecial":"","community":{},"director":{"directorId":903521,"img":"http://img5.mtime.cn/ph/2017/02/17/182200.43454182_1280X720X2.jpg","name":"D·J·卡卢索","nameEn":"D.J. Caruso"},"festivals":[],"hotRanking":-1,"img":"http://img5.mtime.cn/mt/2017/01/05/105822.16893974_1280X720X2.jpg","is3D":true,"isDMAX":true,"isEggHunt":false,"isFilter":false,"isIMAX":false,"isIMAX3D":true,"isTicket":false,"message":"该操作将清除您对该片的评分！是否确认？","mins":"107分钟","movieId":125805,"name":"极限特工：终极回归","nameEn":"xXx: The Return of Xander Cage","overallRating":6.6,"personCount":217,"quizGame":{},"releaseArea":"中国","releaseDate":"20170210","showCinemaCount":-1,"showDay":-1,"showtimeCount":-1,"stageImg":{"count":197,"list":[{"imgId":7176277,"imgUrl":"http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg"},{"imgId":7326885,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165612.20210487_1280X720X2.jpg"},{"imgId":7326886,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165620.12577306_1280X720X2.jpg"},{"imgId":7326887,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165625.43047270_1280X720X2.jpg"}]},"story":"范·迪塞尔扮演的桑德·凯奇在被认为已经死亡后又奇迹般归来，极度危险的反派研制出了能够毁灭世界的终极武器，在这一大危机下，凯奇重出江湖，并招募了一支各有所长、热爱刺激的团队。他们与甄子丹领衔的另一队人马争夺一个叫做\u201c潘多拉魔盒\u201d的武器，最终一起携手拯救世界。才华横溢的导演D·J·卡卢索动作场景拍得非常精彩，其中包括滑滑板下坡的镜头、摩托车冲浪的场景、一场徒步高速公路追逐戏、零重力飞机上的搏斗片段，还有可以终结一切枪战的boss级枪战。","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["动作","冒险","惊悚"],"url":"https://movie.mtime.com/125805/","video":{"count":40,"hightUrl":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980.mp4","img":"http://img5.mtime.cn/mg/2017/01/05/105124.57142324_235X132X4.jpg","title":"极限特工：终极回归 中国版预告片","url":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980_480.mp4","videoId":64107}},"boxOffice":{"movieId":125805,"ranking":0,"todayBox":0,"todayBoxDes":"","todayBoxDesUnit":"","totalBox":112780408790,"totalBoxDes":"11.28亿元","totalBoxUnit":"累计票房(亿)"},"live":{"count":1,"img":"http://img5.mtime.cn/mg/2017/02/04/165331.18709160.jpg","liveId":224,"playNumTag":"83.2万次播放","playTag":"","status":4,"title":"电影《极限特工：终极回归》中国首映礼"},"related":{"goodsCount":0,"goodsList":[],"relateId":0,"relatedUrl":"https://mall-wv.mtime.cn/#!/commerce/list/","type":0}}
+     * data : {"advertisement":{"advList":[{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城缝纫机乐队+商城直男的心思","type":"203","typeName":"影片详情页banner2","url":"https://static4da.mtime.cn/feature/mobile/banner/2017/0929/frjzn750210m.html"}],"count":1,"error":"","success":true},"basic":{"actors":[{"actorId":2280344,"img":"http://img5.mtime.cn/ph/2017/10/17/184748.77500020_1280X720X2.jpg","name":"茱蒂蒙·琼查容苏因","nameEn":"Chutimon Chuengcharoensukying","roleImg":"","roleName":"Lynn"},{"actorId":2130371,"img":"http://img5.mtime.cn/ph/2017/10/17/172413.42558005_1280X720X2.jpg","name":"查侬·散顶腾古","nameEn":"Chanon Santinatornkul","roleImg":"","roleName":"Bank"},{"actorId":2280346,"img":"http://img5.mtime.cn/ph/2017/10/17/173703.55582519_1280X720X2.jpg","name":"披纳若·苏潘平佑","nameEn":"Teeradon Supapunpinyo","roleImg":"","roleName":"Pat"},{"actorId":2280345,"img":"http://img5.mtime.cn/ph/2017/09/21/120840.96008173_1280X720X2.jpg","name":"依莎亚·贺苏汪","nameEn":"Eisaya Hosuwan","roleImg":"","roleName":"Grace"},{"actorId":2280347,"img":"http://img5.mtime.cn/ph/2017/09/21/121604.67495045_1280X720X2.jpg","name":"塔内·瓦拉库努娄","nameEn":"Thaneth Warakulnukroh","roleImg":"","roleName":"Lynn's father"},{"actorId":1995568,"img":"http://img31.mtime.cn/ph/1568/1995568/1995568_1280X720X2.jpg","name":"","nameEn":"Sarinrat Thomas","roleImg":"","roleName":"Headmistress"},{"actorId":2133713,"img":"http://img31.mtime.cn/ph/1713/2133713/2133713_1280X720X2.jpg","name":"","nameEn":"Ego Mikitas","roleImg":"","roleName":"Test Centre Supervisor"},{"actorId":2280348,"img":"http://img31.mtime.cn/ph/348/2280348/2280348_1280X720X2.jpg","name":"帕辛·宽萨塔彭","nameEn":"Pasin Kuansataporn","roleImg":"","roleName":"Tong"},{"actorId":942596,"img":"http://img5.mtime.cn/ph/2016/11/22/113602.13241968_1280X720X2.jpg","name":"","nameEn":"Sahajak Boonthanakit","roleImg":"","roleName":"Pat's father"},{"actorId":2280349,"img":"http://img31.mtime.cn/ph/349/2280349/2280349_1280X720X2.jpg","name":"","nameEn":"Kanjana Vinaipanid","roleImg":"","roleName":"Pat's mother"},{"actorId":2280350,"img":"http://img31.mtime.cn/ph/350/2280350/2280350_1280X720X2.jpg","name":"","nameEn":"Yuthapong Varanukrohchoke","roleImg":"","roleName":"Mr. Sophon"},{"actorId":1978437,"img":"http://img31.mtime.cn/ph/437/1978437/1978437_1280X720X2.jpg","name":"","nameEn":"Nopawat Likitwong","roleImg":"","roleName":"Exam Proctor"},{"actorId":2280351,"img":"http://img31.mtime.cn/ph/351/2280351/2280351_1280X720X2.jpg","name":"","nameEn":"Vittawin Veeravidhayanant","roleImg":"","roleName":"Pat's friend"},{"actorId":2280352,"img":"http://img31.mtime.cn/ph/352/2280352/2280352_1280X720X2.jpg","name":"","nameEn":"Suwijak Mahatthanachotwanich","roleImg":"","roleName":"Pat's friend"},{"actorId":2280353,"img":"http://img31.mtime.cn/ph/353/2280353/2280353_1280X720X2.jpg","name":"","nameEn":"Narwin Rathlertkarn","roleImg":"","roleName":"Pat's friend"},{"actorId":2280354,"img":"http://img31.mtime.cn/ph/354/2280354/2280354_1280X720X2.jpg","name":"","nameEn":"Thanawat Sutat Na Ayutthaya","roleImg":"","roleName":"Pat's friend"},{"actorId":2280355,"img":"http://img31.mtime.cn/ph/355/2280355/2280355_1280X720X2.jpg","name":"","nameEn":"Thanachart Phinyocheep","roleImg":"","roleName":"Pat's friend"},{"actorId":2280356,"img":"http://img31.mtime.cn/ph/356/2280356/2280356_1280X720X2.jpg","name":"","nameEn":"Pichatorn Santinatornkul","roleImg":"","roleName":"STIC client"},{"actorId":2280357,"img":"http://img31.mtime.cn/ph/357/2280357/2280357_1280X720X2.jpg","name":"","nameEn":"Thanwalai Pornjirattikal","roleImg":"","roleName":"STIC client"},{"actorId":2280358,"img":"http://img31.mtime.cn/ph/358/2280358/2280358_1280X720X2.jpg","name":"","nameEn":"Natchanok Kamonrattananan","roleImg":"","roleName":"STIC client"}],"award":{"awardList":[],"totalNominateAward":0,"totalWinAward":0},"commentSpecial":"泰国人把考试作弊拍成了《碟中谍》","community":{},"director":{"directorId":2253038,"img":"http://img5.mtime.cn/ph/2017/09/21/121732.54289478_1280X720X2.jpg","name":"纳塔吾·彭皮里亚","nameEn":"Nattawut Poonpiriya"},"festivals":[],"hotRanking":1,"img":"http://img5.mtime.cn/mt/2017/10/10/113027.39998023_1280X720X2.jpg","is3D":false,"isDMAX":false,"isEggHunt":false,"isFilter":false,"isIMAX":true,"isIMAX3D":false,"isTicket":true,"message":"该操作将清除您对该片的评分！是否确认？","mins":"130分钟","movieId":247578,"name":"天才枪手","nameEn":"Bad Genius","overallRating":8.4,"personCount":87,"quizGame":{},"releaseArea":"中国","releaseDate":"20171013","showCinemaCount":142,"showDay":1508486400,"showtimeCount":627,"stageImg":{"count":64,"list":[{"imgId":7368901,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170616.97002417_1280X720X2.jpg"},{"imgId":7368902,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170622.64132998_1280X720X2.jpg"},{"imgId":7368903,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170627.43209834_1280X720X2.jpg"},{"imgId":7368904,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170635.66817207_1280X720X2.jpg"}]},"story":"改编自真实事件，讲述天才高中生小琳专门为同学作弊牟取暴利，她接下一个天价委托，要在国际会考上跨国为富家公子作弊，小琳找另一名记忆力极佳的天才学生班克，策划一场跨时区的完美作弊！","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["喜剧","犯罪","剧情","惊悚"],"url":"https://movie.mtime.com/247578/","video":{"count":4,"hightUrl":"https://vfx.mtime.cn/Video/2017/09/30/mp4/170930092056602306.mp4","img":"http://img5.mtime.cn/mg/2017/09/30/092023.60238574_235X132X4.jpg","title":"天才枪手 \u201c谍中谍\u201d预告","url":"https://vfx.mtime.cn/Video/2017/09/30/mp4/170930092056602306_480.mp4","videoId":67863}},"boxOffice":{"movieId":247578,"ranking":3,"todayBox":524619249,"todayBoxDes":"524.62","todayBoxDesUnit":"今日实时(万)","totalBox":17157780945,"totalBoxDes":"1.72","totalBoxUnit":"累计票房(亿)"},"live":{"count":0,"img":"","liveId":0,"playNumTag":"","playTag":"","status":3,"title":""},"related":{"goodsCount":0,"goodsList":[],"relateId":0,"relatedUrl":"https://mall-wv.mtime.cn/#!/commerce/list/","type":0}}
      * msg : 成功
      * showMsg :
      */
@@ -54,10 +54,10 @@ public class MovieDetail {
 
     public static class DataBean {
         /**
-         * advertisement : {"advList":[{"advTag":"","endDate":1512057599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城缝纫机乐队+商城直男的心思","type":"203","typeName":"影片详情页banner2","url":"https://static4da.mtime.cn/feature/mobile/banner/2017/0929/frjzn750210m.html"}],"count":1,"error":"","success":true}
-         * basic : {"actors":[{"actorId":913378,"img":"http://img31.mtime.cn/ph/2014/09/01/170748.64755972_1280X720X2.jpg","name":"范·迪塞尔","nameEn":"Vin Diesel","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162613.85098094.jpg","roleName":"桑德·凯奇"},{"actorId":893008,"img":"http://img31.mtime.cn/ph/2014/03/13/164116.22404345_1280X720X2.jpg","name":"甄子丹","nameEn":"Donnie Yen","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162631.30237748.jpg","roleName":"项"},{"actorId":1403701,"img":"http://img31.mtime.cn/ph/2016/04/05/153734.26333599_1280X720X2.jpg","name":"迪皮卡·帕度柯妮","nameEn":"Deepika Padukone","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163611.99195116.jpg","roleName":"赛琳娜"},{"actorId":1763914,"img":"http://img5.mtime.cn/ph/2017/02/08/172048.77104443_1280X720X2.jpg","name":"鲁比·罗丝","nameEn":"Ruby Rose","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162801.28633700.jpg","roleName":"阿黛尔"},{"actorId":1981491,"img":"http://img5.mtime.cn/ph/2017/08/21/103819.54514950_1280X720X2.jpg","name":"吴亦凡","nameEn":"Kris Wu","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162650.25424635.jpg","roleName":"DJ尼克斯"},{"actorId":1266158,"img":"http://img31.mtime.cn/ph/2016/05/04/162943.45619387_1280X720X2.jpg","name":"妮娜·杜波夫","nameEn":"Nina Dobrev","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163459.85286563.jpg","roleName":"贝基"},{"actorId":913101,"img":"http://img31.mtime.cn/ph/2014/03/14/152328.88324192_1280X720X2.jpg","name":"塞缪尔·杰克逊","nameEn":"Samuel L. Jackson","roleImg":"http://img5.mtime.cn/mg/2017/02/09/143611.45346521.jpg","roleName":"吉布森"},{"actorId":938310,"img":"http://img31.mtime.cn/ph/2014/02/22/202102.28239250_1280X720X2.jpg","name":"托尼·贾","nameEn":"Tony Jaa","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163434.84663336.jpg","roleName":"塔隆"},{"actorId":915029,"img":"http://img5.mtime.cn/ph/2017/01/12/165011.48068899_1280X720X2.jpg","name":"托妮·科莱特","nameEn":"Toni Collette","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163402.87655748.jpg","roleName":"马珂"},{"actorId":926008,"img":"http://img31.mtime.cn/ph/2016/04/07/144735.68017937_1280X720X2.jpg","name":"罗伊·麦克凯恩","nameEn":"Rory McCann","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163308.86236332.jpg","roleName":"泰尼逊"},{"actorId":2201494,"img":"http://img5.mtime.cn/ph/2016/11/02/092530.84997401_1280X720X2.jpg","name":"尼基·詹姆","nameEn":"Nicky Jam","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163152.53635568.jpg","roleName":"拉撒路"},{"actorId":1416487,"img":"http://img31.mtime.cn/ph/2016/08/29/184141.26902742_1280X720X2.jpg","name":"迈克尔·比斯平","nameEn":"Michael Bisping","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163040.43362207.jpg","roleName":"霍克"},{"actorId":2098727,"img":"http://img31.mtime.cn/ph/2015/07/01/114143.59711468_1280X720X2.jpg","name":"内马尔","nameEn":"Neymar","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163524.98203922.jpg","roleName":"内马尔"},{"actorId":903983,"img":"http://img31.mtime.cn/ph/2014/02/22/194147.64436994_1280X720X2.jpg","name":"艾斯·库珀","nameEn":"Ice Cube","roleImg":"","roleName":"达里斯"},{"actorId":2084677,"img":"http://img31.mtime.cn/ph/2015/09/09/101940.19419320_1280X720X2.jpg","name":"赫敏·科菲尔德","nameEn":"Hermione Corfield","roleImg":"","roleName":"安斯利"},{"actorId":921201,"img":"http://img31.mtime.cn/ph/2014/04/15/111254.75720606_1280X720X2.jpg","name":"艾尔·斯帕恩扎","nameEn":"Al Sapienza","roleImg":"","roleName":"CIA Director"},{"actorId":1232892,"img":"http://img5.mtime.cn/ph/2017/01/05/145035.65755647_1280X720X2.jpg","name":"","nameEn":"Helena-Alexis Seymour","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218074,"img":"http://img31.mtime.cn/ph/2016/08/29/184313.10828827_1280X720X2.jpg","name":"","nameEn":"Megan Soo","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218075,"img":"http://img5.mtime.cn/ph/2017/01/05/144739.37346974_1280X720X2.jpg","name":"","nameEn":"Kristen Kurnik","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":1023991,"img":"http://img5.mtime.cn/ph/2017/01/05/144625.10720932_1280X720X2.jpg","name":"","nameEn":"Gary 'Si-Jo' Foo","roleImg":"","roleName":"NSA Contractor       (uncredited)"}],"award":{"awardList":[],"totalNominateAward":0,"totalWinAward":0},"commentSpecial":"","community":{},"director":{"directorId":903521,"img":"http://img5.mtime.cn/ph/2017/02/17/182200.43454182_1280X720X2.jpg","name":"D·J·卡卢索","nameEn":"D.J. Caruso"},"festivals":[],"hotRanking":-1,"img":"http://img5.mtime.cn/mt/2017/01/05/105822.16893974_1280X720X2.jpg","is3D":true,"isDMAX":true,"isEggHunt":false,"isFilter":false,"isIMAX":false,"isIMAX3D":true,"isTicket":false,"message":"该操作将清除您对该片的评分！是否确认？","mins":"107分钟","movieId":125805,"name":"极限特工：终极回归","nameEn":"xXx: The Return of Xander Cage","overallRating":6.6,"personCount":217,"quizGame":{},"releaseArea":"中国","releaseDate":"20170210","showCinemaCount":-1,"showDay":-1,"showtimeCount":-1,"stageImg":{"count":197,"list":[{"imgId":7176277,"imgUrl":"http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg"},{"imgId":7326885,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165612.20210487_1280X720X2.jpg"},{"imgId":7326886,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165620.12577306_1280X720X2.jpg"},{"imgId":7326887,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165625.43047270_1280X720X2.jpg"}]},"story":"范·迪塞尔扮演的桑德·凯奇在被认为已经死亡后又奇迹般归来，极度危险的反派研制出了能够毁灭世界的终极武器，在这一大危机下，凯奇重出江湖，并招募了一支各有所长、热爱刺激的团队。他们与甄子丹领衔的另一队人马争夺一个叫做\u201c潘多拉魔盒\u201d的武器，最终一起携手拯救世界。才华横溢的导演D·J·卡卢索动作场景拍得非常精彩，其中包括滑滑板下坡的镜头、摩托车冲浪的场景、一场徒步高速公路追逐戏、零重力飞机上的搏斗片段，还有可以终结一切枪战的boss级枪战。","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["动作","冒险","惊悚"],"url":"https://movie.mtime.com/125805/","video":{"count":40,"hightUrl":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980.mp4","img":"http://img5.mtime.cn/mg/2017/01/05/105124.57142324_235X132X4.jpg","title":"极限特工：终极回归 中国版预告片","url":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980_480.mp4","videoId":64107}}
-         * boxOffice : {"movieId":125805,"ranking":0,"todayBox":0,"todayBoxDes":"","todayBoxDesUnit":"","totalBox":112780408790,"totalBoxDes":"11.28亿元","totalBoxUnit":"累计票房(亿)"}
-         * live : {"count":1,"img":"http://img5.mtime.cn/mg/2017/02/04/165331.18709160.jpg","liveId":224,"playNumTag":"83.2万次播放","playTag":"","status":4,"title":"电影《极限特工：终极回归》中国首映礼"}
+         * advertisement : {"advList":[{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城缝纫机乐队+商城直男的心思","type":"203","typeName":"影片详情页banner2","url":"https://static4da.mtime.cn/feature/mobile/banner/2017/0929/frjzn750210m.html"}],"count":1,"error":"","success":true}
+         * basic : {"actors":[{"actorId":2280344,"img":"http://img5.mtime.cn/ph/2017/10/17/184748.77500020_1280X720X2.jpg","name":"茱蒂蒙·琼查容苏因","nameEn":"Chutimon Chuengcharoensukying","roleImg":"","roleName":"Lynn"},{"actorId":2130371,"img":"http://img5.mtime.cn/ph/2017/10/17/172413.42558005_1280X720X2.jpg","name":"查侬·散顶腾古","nameEn":"Chanon Santinatornkul","roleImg":"","roleName":"Bank"},{"actorId":2280346,"img":"http://img5.mtime.cn/ph/2017/10/17/173703.55582519_1280X720X2.jpg","name":"披纳若·苏潘平佑","nameEn":"Teeradon Supapunpinyo","roleImg":"","roleName":"Pat"},{"actorId":2280345,"img":"http://img5.mtime.cn/ph/2017/09/21/120840.96008173_1280X720X2.jpg","name":"依莎亚·贺苏汪","nameEn":"Eisaya Hosuwan","roleImg":"","roleName":"Grace"},{"actorId":2280347,"img":"http://img5.mtime.cn/ph/2017/09/21/121604.67495045_1280X720X2.jpg","name":"塔内·瓦拉库努娄","nameEn":"Thaneth Warakulnukroh","roleImg":"","roleName":"Lynn's father"},{"actorId":1995568,"img":"http://img31.mtime.cn/ph/1568/1995568/1995568_1280X720X2.jpg","name":"","nameEn":"Sarinrat Thomas","roleImg":"","roleName":"Headmistress"},{"actorId":2133713,"img":"http://img31.mtime.cn/ph/1713/2133713/2133713_1280X720X2.jpg","name":"","nameEn":"Ego Mikitas","roleImg":"","roleName":"Test Centre Supervisor"},{"actorId":2280348,"img":"http://img31.mtime.cn/ph/348/2280348/2280348_1280X720X2.jpg","name":"帕辛·宽萨塔彭","nameEn":"Pasin Kuansataporn","roleImg":"","roleName":"Tong"},{"actorId":942596,"img":"http://img5.mtime.cn/ph/2016/11/22/113602.13241968_1280X720X2.jpg","name":"","nameEn":"Sahajak Boonthanakit","roleImg":"","roleName":"Pat's father"},{"actorId":2280349,"img":"http://img31.mtime.cn/ph/349/2280349/2280349_1280X720X2.jpg","name":"","nameEn":"Kanjana Vinaipanid","roleImg":"","roleName":"Pat's mother"},{"actorId":2280350,"img":"http://img31.mtime.cn/ph/350/2280350/2280350_1280X720X2.jpg","name":"","nameEn":"Yuthapong Varanukrohchoke","roleImg":"","roleName":"Mr. Sophon"},{"actorId":1978437,"img":"http://img31.mtime.cn/ph/437/1978437/1978437_1280X720X2.jpg","name":"","nameEn":"Nopawat Likitwong","roleImg":"","roleName":"Exam Proctor"},{"actorId":2280351,"img":"http://img31.mtime.cn/ph/351/2280351/2280351_1280X720X2.jpg","name":"","nameEn":"Vittawin Veeravidhayanant","roleImg":"","roleName":"Pat's friend"},{"actorId":2280352,"img":"http://img31.mtime.cn/ph/352/2280352/2280352_1280X720X2.jpg","name":"","nameEn":"Suwijak Mahatthanachotwanich","roleImg":"","roleName":"Pat's friend"},{"actorId":2280353,"img":"http://img31.mtime.cn/ph/353/2280353/2280353_1280X720X2.jpg","name":"","nameEn":"Narwin Rathlertkarn","roleImg":"","roleName":"Pat's friend"},{"actorId":2280354,"img":"http://img31.mtime.cn/ph/354/2280354/2280354_1280X720X2.jpg","name":"","nameEn":"Thanawat Sutat Na Ayutthaya","roleImg":"","roleName":"Pat's friend"},{"actorId":2280355,"img":"http://img31.mtime.cn/ph/355/2280355/2280355_1280X720X2.jpg","name":"","nameEn":"Thanachart Phinyocheep","roleImg":"","roleName":"Pat's friend"},{"actorId":2280356,"img":"http://img31.mtime.cn/ph/356/2280356/2280356_1280X720X2.jpg","name":"","nameEn":"Pichatorn Santinatornkul","roleImg":"","roleName":"STIC client"},{"actorId":2280357,"img":"http://img31.mtime.cn/ph/357/2280357/2280357_1280X720X2.jpg","name":"","nameEn":"Thanwalai Pornjirattikal","roleImg":"","roleName":"STIC client"},{"actorId":2280358,"img":"http://img31.mtime.cn/ph/358/2280358/2280358_1280X720X2.jpg","name":"","nameEn":"Natchanok Kamonrattananan","roleImg":"","roleName":"STIC client"}],"award":{"awardList":[],"totalNominateAward":0,"totalWinAward":0},"commentSpecial":"泰国人把考试作弊拍成了《碟中谍》","community":{},"director":{"directorId":2253038,"img":"http://img5.mtime.cn/ph/2017/09/21/121732.54289478_1280X720X2.jpg","name":"纳塔吾·彭皮里亚","nameEn":"Nattawut Poonpiriya"},"festivals":[],"hotRanking":1,"img":"http://img5.mtime.cn/mt/2017/10/10/113027.39998023_1280X720X2.jpg","is3D":false,"isDMAX":false,"isEggHunt":false,"isFilter":false,"isIMAX":true,"isIMAX3D":false,"isTicket":true,"message":"该操作将清除您对该片的评分！是否确认？","mins":"130分钟","movieId":247578,"name":"天才枪手","nameEn":"Bad Genius","overallRating":8.4,"personCount":87,"quizGame":{},"releaseArea":"中国","releaseDate":"20171013","showCinemaCount":142,"showDay":1508486400,"showtimeCount":627,"stageImg":{"count":64,"list":[{"imgId":7368901,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170616.97002417_1280X720X2.jpg"},{"imgId":7368902,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170622.64132998_1280X720X2.jpg"},{"imgId":7368903,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170627.43209834_1280X720X2.jpg"},{"imgId":7368904,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170635.66817207_1280X720X2.jpg"}]},"story":"改编自真实事件，讲述天才高中生小琳专门为同学作弊牟取暴利，她接下一个天价委托，要在国际会考上跨国为富家公子作弊，小琳找另一名记忆力极佳的天才学生班克，策划一场跨时区的完美作弊！","style":{"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""},"totalNominateAward":0,"totalWinAward":0,"type":["喜剧","犯罪","剧情","惊悚"],"url":"https://movie.mtime.com/247578/","video":{"count":4,"hightUrl":"https://vfx.mtime.cn/Video/2017/09/30/mp4/170930092056602306.mp4","img":"http://img5.mtime.cn/mg/2017/09/30/092023.60238574_235X132X4.jpg","title":"天才枪手 \u201c谍中谍\u201d预告","url":"https://vfx.mtime.cn/Video/2017/09/30/mp4/170930092056602306_480.mp4","videoId":67863}}
+         * boxOffice : {"movieId":247578,"ranking":3,"todayBox":524619249,"todayBoxDes":"524.62","todayBoxDesUnit":"今日实时(万)","totalBox":17157780945,"totalBoxDes":"1.72","totalBoxUnit":"累计票房(亿)"}
+         * live : {"count":0,"img":"","liveId":0,"playNumTag":"","playTag":"","status":3,"title":""}
          * related : {"goodsCount":0,"goodsList":[],"relateId":0,"relatedUrl":"https://mall-wv.mtime.cn/#!/commerce/list/","type":0}
          */
 
@@ -109,7 +109,7 @@ public class MovieDetail {
 
         public static class AdvertisementBean {
             /**
-             * advList : [{"advTag":"","endDate":1512057599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城缝纫机乐队+商城直男的心思","type":"203","typeName":"影片详情页banner2","url":"https://static4da.mtime.cn/feature/mobile/banner/2017/0929/frjzn750210m.html"}]
+             * advList : [{"advTag":"","endDate":1514649599,"isHorizontalScreen":false,"isOpenH5":false,"startDate":1451577600,"tag":"商城缝纫机乐队+商城直男的心思","type":"203","typeName":"影片详情页banner2","url":"https://static4da.mtime.cn/feature/mobile/banner/2017/0929/frjzn750210m.html"}]
              * count : 1
              * error :
              * success : true
@@ -155,7 +155,7 @@ public class MovieDetail {
             public static class AdvListBean {
                 /**
                  * advTag :
-                 * endDate : 1512057599
+                 * endDate : 1514649599
                  * isHorizontalScreen : false
                  * isOpenH5 : false
                  * startDate : 1451577600
@@ -251,42 +251,42 @@ public class MovieDetail {
 
         public static class BasicBean {
             /**
-             * actors : [{"actorId":913378,"img":"http://img31.mtime.cn/ph/2014/09/01/170748.64755972_1280X720X2.jpg","name":"范·迪塞尔","nameEn":"Vin Diesel","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162613.85098094.jpg","roleName":"桑德·凯奇"},{"actorId":893008,"img":"http://img31.mtime.cn/ph/2014/03/13/164116.22404345_1280X720X2.jpg","name":"甄子丹","nameEn":"Donnie Yen","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162631.30237748.jpg","roleName":"项"},{"actorId":1403701,"img":"http://img31.mtime.cn/ph/2016/04/05/153734.26333599_1280X720X2.jpg","name":"迪皮卡·帕度柯妮","nameEn":"Deepika Padukone","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163611.99195116.jpg","roleName":"赛琳娜"},{"actorId":1763914,"img":"http://img5.mtime.cn/ph/2017/02/08/172048.77104443_1280X720X2.jpg","name":"鲁比·罗丝","nameEn":"Ruby Rose","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162801.28633700.jpg","roleName":"阿黛尔"},{"actorId":1981491,"img":"http://img5.mtime.cn/ph/2017/08/21/103819.54514950_1280X720X2.jpg","name":"吴亦凡","nameEn":"Kris Wu","roleImg":"http://img5.mtime.cn/mg/2017/01/05/162650.25424635.jpg","roleName":"DJ尼克斯"},{"actorId":1266158,"img":"http://img31.mtime.cn/ph/2016/05/04/162943.45619387_1280X720X2.jpg","name":"妮娜·杜波夫","nameEn":"Nina Dobrev","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163459.85286563.jpg","roleName":"贝基"},{"actorId":913101,"img":"http://img31.mtime.cn/ph/2014/03/14/152328.88324192_1280X720X2.jpg","name":"塞缪尔·杰克逊","nameEn":"Samuel L. Jackson","roleImg":"http://img5.mtime.cn/mg/2017/02/09/143611.45346521.jpg","roleName":"吉布森"},{"actorId":938310,"img":"http://img31.mtime.cn/ph/2014/02/22/202102.28239250_1280X720X2.jpg","name":"托尼·贾","nameEn":"Tony Jaa","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163434.84663336.jpg","roleName":"塔隆"},{"actorId":915029,"img":"http://img5.mtime.cn/ph/2017/01/12/165011.48068899_1280X720X2.jpg","name":"托妮·科莱特","nameEn":"Toni Collette","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163402.87655748.jpg","roleName":"马珂"},{"actorId":926008,"img":"http://img31.mtime.cn/ph/2016/04/07/144735.68017937_1280X720X2.jpg","name":"罗伊·麦克凯恩","nameEn":"Rory McCann","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163308.86236332.jpg","roleName":"泰尼逊"},{"actorId":2201494,"img":"http://img5.mtime.cn/ph/2016/11/02/092530.84997401_1280X720X2.jpg","name":"尼基·詹姆","nameEn":"Nicky Jam","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163152.53635568.jpg","roleName":"拉撒路"},{"actorId":1416487,"img":"http://img31.mtime.cn/ph/2016/08/29/184141.26902742_1280X720X2.jpg","name":"迈克尔·比斯平","nameEn":"Michael Bisping","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163040.43362207.jpg","roleName":"霍克"},{"actorId":2098727,"img":"http://img31.mtime.cn/ph/2015/07/01/114143.59711468_1280X720X2.jpg","name":"内马尔","nameEn":"Neymar","roleImg":"http://img5.mtime.cn/mg/2017/01/05/163524.98203922.jpg","roleName":"内马尔"},{"actorId":903983,"img":"http://img31.mtime.cn/ph/2014/02/22/194147.64436994_1280X720X2.jpg","name":"艾斯·库珀","nameEn":"Ice Cube","roleImg":"","roleName":"达里斯"},{"actorId":2084677,"img":"http://img31.mtime.cn/ph/2015/09/09/101940.19419320_1280X720X2.jpg","name":"赫敏·科菲尔德","nameEn":"Hermione Corfield","roleImg":"","roleName":"安斯利"},{"actorId":921201,"img":"http://img31.mtime.cn/ph/2014/04/15/111254.75720606_1280X720X2.jpg","name":"艾尔·斯帕恩扎","nameEn":"Al Sapienza","roleImg":"","roleName":"CIA Director"},{"actorId":1232892,"img":"http://img5.mtime.cn/ph/2017/01/05/145035.65755647_1280X720X2.jpg","name":"","nameEn":"Helena-Alexis Seymour","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218074,"img":"http://img31.mtime.cn/ph/2016/08/29/184313.10828827_1280X720X2.jpg","name":"","nameEn":"Megan Soo","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":2218075,"img":"http://img5.mtime.cn/ph/2017/01/05/144739.37346974_1280X720X2.jpg","name":"","nameEn":"Kristen Kurnik","roleImg":"","roleName":"Ainsley's Girl"},{"actorId":1023991,"img":"http://img5.mtime.cn/ph/2017/01/05/144625.10720932_1280X720X2.jpg","name":"","nameEn":"Gary 'Si-Jo' Foo","roleImg":"","roleName":"NSA Contractor       (uncredited)"}]
+             * actors : [{"actorId":2280344,"img":"http://img5.mtime.cn/ph/2017/10/17/184748.77500020_1280X720X2.jpg","name":"茱蒂蒙·琼查容苏因","nameEn":"Chutimon Chuengcharoensukying","roleImg":"","roleName":"Lynn"},{"actorId":2130371,"img":"http://img5.mtime.cn/ph/2017/10/17/172413.42558005_1280X720X2.jpg","name":"查侬·散顶腾古","nameEn":"Chanon Santinatornkul","roleImg":"","roleName":"Bank"},{"actorId":2280346,"img":"http://img5.mtime.cn/ph/2017/10/17/173703.55582519_1280X720X2.jpg","name":"披纳若·苏潘平佑","nameEn":"Teeradon Supapunpinyo","roleImg":"","roleName":"Pat"},{"actorId":2280345,"img":"http://img5.mtime.cn/ph/2017/09/21/120840.96008173_1280X720X2.jpg","name":"依莎亚·贺苏汪","nameEn":"Eisaya Hosuwan","roleImg":"","roleName":"Grace"},{"actorId":2280347,"img":"http://img5.mtime.cn/ph/2017/09/21/121604.67495045_1280X720X2.jpg","name":"塔内·瓦拉库努娄","nameEn":"Thaneth Warakulnukroh","roleImg":"","roleName":"Lynn's father"},{"actorId":1995568,"img":"http://img31.mtime.cn/ph/1568/1995568/1995568_1280X720X2.jpg","name":"","nameEn":"Sarinrat Thomas","roleImg":"","roleName":"Headmistress"},{"actorId":2133713,"img":"http://img31.mtime.cn/ph/1713/2133713/2133713_1280X720X2.jpg","name":"","nameEn":"Ego Mikitas","roleImg":"","roleName":"Test Centre Supervisor"},{"actorId":2280348,"img":"http://img31.mtime.cn/ph/348/2280348/2280348_1280X720X2.jpg","name":"帕辛·宽萨塔彭","nameEn":"Pasin Kuansataporn","roleImg":"","roleName":"Tong"},{"actorId":942596,"img":"http://img5.mtime.cn/ph/2016/11/22/113602.13241968_1280X720X2.jpg","name":"","nameEn":"Sahajak Boonthanakit","roleImg":"","roleName":"Pat's father"},{"actorId":2280349,"img":"http://img31.mtime.cn/ph/349/2280349/2280349_1280X720X2.jpg","name":"","nameEn":"Kanjana Vinaipanid","roleImg":"","roleName":"Pat's mother"},{"actorId":2280350,"img":"http://img31.mtime.cn/ph/350/2280350/2280350_1280X720X2.jpg","name":"","nameEn":"Yuthapong Varanukrohchoke","roleImg":"","roleName":"Mr. Sophon"},{"actorId":1978437,"img":"http://img31.mtime.cn/ph/437/1978437/1978437_1280X720X2.jpg","name":"","nameEn":"Nopawat Likitwong","roleImg":"","roleName":"Exam Proctor"},{"actorId":2280351,"img":"http://img31.mtime.cn/ph/351/2280351/2280351_1280X720X2.jpg","name":"","nameEn":"Vittawin Veeravidhayanant","roleImg":"","roleName":"Pat's friend"},{"actorId":2280352,"img":"http://img31.mtime.cn/ph/352/2280352/2280352_1280X720X2.jpg","name":"","nameEn":"Suwijak Mahatthanachotwanich","roleImg":"","roleName":"Pat's friend"},{"actorId":2280353,"img":"http://img31.mtime.cn/ph/353/2280353/2280353_1280X720X2.jpg","name":"","nameEn":"Narwin Rathlertkarn","roleImg":"","roleName":"Pat's friend"},{"actorId":2280354,"img":"http://img31.mtime.cn/ph/354/2280354/2280354_1280X720X2.jpg","name":"","nameEn":"Thanawat Sutat Na Ayutthaya","roleImg":"","roleName":"Pat's friend"},{"actorId":2280355,"img":"http://img31.mtime.cn/ph/355/2280355/2280355_1280X720X2.jpg","name":"","nameEn":"Thanachart Phinyocheep","roleImg":"","roleName":"Pat's friend"},{"actorId":2280356,"img":"http://img31.mtime.cn/ph/356/2280356/2280356_1280X720X2.jpg","name":"","nameEn":"Pichatorn Santinatornkul","roleImg":"","roleName":"STIC client"},{"actorId":2280357,"img":"http://img31.mtime.cn/ph/357/2280357/2280357_1280X720X2.jpg","name":"","nameEn":"Thanwalai Pornjirattikal","roleImg":"","roleName":"STIC client"},{"actorId":2280358,"img":"http://img31.mtime.cn/ph/358/2280358/2280358_1280X720X2.jpg","name":"","nameEn":"Natchanok Kamonrattananan","roleImg":"","roleName":"STIC client"}]
              * award : {"awardList":[],"totalNominateAward":0,"totalWinAward":0}
-             * commentSpecial :
+             * commentSpecial : 泰国人把考试作弊拍成了《碟中谍》
              * community : {}
-             * director : {"directorId":903521,"img":"http://img5.mtime.cn/ph/2017/02/17/182200.43454182_1280X720X2.jpg","name":"D·J·卡卢索","nameEn":"D.J. Caruso"}
+             * director : {"directorId":2253038,"img":"http://img5.mtime.cn/ph/2017/09/21/121732.54289478_1280X720X2.jpg","name":"纳塔吾·彭皮里亚","nameEn":"Nattawut Poonpiriya"}
              * festivals : []
-             * hotRanking : -1
-             * img : http://img5.mtime.cn/mt/2017/01/05/105822.16893974_1280X720X2.jpg
-             * is3D : true
-             * isDMAX : true
+             * hotRanking : 1
+             * img : http://img5.mtime.cn/mt/2017/10/10/113027.39998023_1280X720X2.jpg
+             * is3D : false
+             * isDMAX : false
              * isEggHunt : false
              * isFilter : false
-             * isIMAX : false
-             * isIMAX3D : true
-             * isTicket : false
+             * isIMAX : true
+             * isIMAX3D : false
+             * isTicket : true
              * message : 该操作将清除您对该片的评分！是否确认？
-             * mins : 107分钟
-             * movieId : 125805
-             * name : 极限特工：终极回归
-             * nameEn : xXx: The Return of Xander Cage
-             * overallRating : 6.6
-             * personCount : 217
+             * mins : 130分钟
+             * movieId : 247578
+             * name : 天才枪手
+             * nameEn : Bad Genius
+             * overallRating : 8.4
+             * personCount : 87
              * quizGame : {}
              * releaseArea : 中国
-             * releaseDate : 20170210
-             * showCinemaCount : -1
-             * showDay : -1
-             * showtimeCount : -1
-             * stageImg : {"count":197,"list":[{"imgId":7176277,"imgUrl":"http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg"},{"imgId":7326885,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165612.20210487_1280X720X2.jpg"},{"imgId":7326886,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165620.12577306_1280X720X2.jpg"},{"imgId":7326887,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165625.43047270_1280X720X2.jpg"}]}
-             * story : 范·迪塞尔扮演的桑德·凯奇在被认为已经死亡后又奇迹般归来，极度危险的反派研制出了能够毁灭世界的终极武器，在这一大危机下，凯奇重出江湖，并招募了一支各有所长、热爱刺激的团队。他们与甄子丹领衔的另一队人马争夺一个叫做“潘多拉魔盒”的武器，最终一起携手拯救世界。才华横溢的导演D·J·卡卢索动作场景拍得非常精彩，其中包括滑滑板下坡的镜头、摩托车冲浪的场景、一场徒步高速公路追逐戏、零重力飞机上的搏斗片段，还有可以终结一切枪战的boss级枪战。
+             * releaseDate : 20171013
+             * showCinemaCount : 142
+             * showDay : 1508486400
+             * showtimeCount : 627
+             * stageImg : {"count":64,"list":[{"imgId":7368901,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170616.97002417_1280X720X2.jpg"},{"imgId":7368902,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170622.64132998_1280X720X2.jpg"},{"imgId":7368903,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170627.43209834_1280X720X2.jpg"},{"imgId":7368904,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170635.66817207_1280X720X2.jpg"}]}
+             * story : 改编自真实事件，讲述天才高中生小琳专门为同学作弊牟取暴利，她接下一个天价委托，要在国际会考上跨国为富家公子作弊，小琳找另一名记忆力极佳的天才学生班克，策划一场跨时区的完美作弊！
              * style : {"isLeadPage":0,"leadImg":"https://img2.mtime.cn/mg/.jpg","leadUrl":""}
              * totalNominateAward : 0
              * totalWinAward : 0
-             * type : ["动作","冒险","惊悚"]
-             * url : https://movie.mtime.com/125805/
-             * video : {"count":40,"hightUrl":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980.mp4","img":"http://img5.mtime.cn/mg/2017/01/05/105124.57142324_235X132X4.jpg","title":"极限特工：终极回归 中国版预告片","url":"https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980_480.mp4","videoId":64107}
+             * type : ["喜剧","犯罪","剧情","惊悚"]
+             * url : https://movie.mtime.com/247578/
+             * video : {"count":4,"hightUrl":"https://vfx.mtime.cn/Video/2017/09/30/mp4/170930092056602306.mp4","img":"http://img5.mtime.cn/mg/2017/09/30/092023.60238574_235X132X4.jpg","title":"天才枪手 \u201c谍中谍\u201d预告","url":"https://vfx.mtime.cn/Video/2017/09/30/mp4/170930092056602306_480.mp4","videoId":67863}
              */
 
             private AwardBean award;
@@ -621,6 +621,49 @@ public class MovieDetail {
             }
 
             public static class DirectorBean {
+                /**
+                 * directorId : 2253038
+                 * img : http://img5.mtime.cn/ph/2017/09/21/121732.54289478_1280X720X2.jpg
+                 * name : 纳塔吾·彭皮里亚
+                 * nameEn : Nattawut Poonpiriya
+                 */
+                private int directorId;
+                private String img;
+                private String name;
+                private String nameEn;
+
+                public int getDirectorId() {
+                    return directorId;
+                }
+
+                public void setDirectorId(int directorId) {
+                    this.directorId = directorId;
+                }
+
+                public String getImg() {
+                    return img;
+                }
+
+                public void setImg(String img) {
+                    this.img = img;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public String getNameEn() {
+                    return nameEn;
+                }
+
+                public void setNameEn(String nameEn) {
+                    this.nameEn = nameEn;
+                }
+
             }
 
             public static class QuizGameBean {
@@ -628,8 +671,8 @@ public class MovieDetail {
 
             public static class StageImgBean {
                 /**
-                 * count : 197
-                 * list : [{"imgId":7176277,"imgUrl":"http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg"},{"imgId":7326885,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165612.20210487_1280X720X2.jpg"},{"imgId":7326886,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165620.12577306_1280X720X2.jpg"},{"imgId":7326887,"imgUrl":"http://img5.mtime.cn/pi/2017/01/25/165625.43047270_1280X720X2.jpg"}]
+                 * count : 64
+                 * list : [{"imgId":7368901,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170616.97002417_1280X720X2.jpg"},{"imgId":7368902,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170622.64132998_1280X720X2.jpg"},{"imgId":7368903,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170627.43209834_1280X720X2.jpg"},{"imgId":7368904,"imgUrl":"http://img5.mtime.cn/pi/2017/06/22/170635.66817207_1280X720X2.jpg"}]
                  */
 
                 private int count;
@@ -653,8 +696,8 @@ public class MovieDetail {
 
                 public static class ListBean {
                     /**
-                     * imgId : 7176277
-                     * imgUrl : http://img31.mtime.cn/pi/2016/02/23/094309.19731831_1280X720X2.jpg
+                     * imgId : 7368901
+                     * imgUrl : http://img5.mtime.cn/pi/2017/06/22/170616.97002417_1280X720X2.jpg
                      */
 
                     private int imgId;
@@ -716,12 +759,12 @@ public class MovieDetail {
 
             public static class VideoBean {
                 /**
-                 * count : 40
-                 * hightUrl : https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980.mp4
-                 * img : http://img5.mtime.cn/mg/2017/01/05/105124.57142324_235X132X4.jpg
-                 * title : 极限特工：终极回归 中国版预告片
-                 * url : https://vfx.mtime.cn/Video/2017/01/05/mp4/170105105137886980_480.mp4
-                 * videoId : 64107
+                 * count : 4
+                 * hightUrl : https://vfx.mtime.cn/Video/2017/09/30/mp4/170930092056602306.mp4
+                 * img : http://img5.mtime.cn/mg/2017/09/30/092023.60238574_235X132X4.jpg
+                 * title : 天才枪手 “谍中谍”预告
+                 * url : https://vfx.mtime.cn/Video/2017/09/30/mp4/170930092056602306_480.mp4
+                 * videoId : 67863
                  */
 
                 private int count;
@@ -782,12 +825,12 @@ public class MovieDetail {
 
             public static class ActorsBean {
                 /**
-                 * actorId : 913378
-                 * img : http://img31.mtime.cn/ph/2014/09/01/170748.64755972_1280X720X2.jpg
-                 * name : 范·迪塞尔
-                 * nameEn : Vin Diesel
-                 * roleImg : http://img5.mtime.cn/mg/2017/01/05/162613.85098094.jpg
-                 * roleName : 桑德·凯奇
+                 * actorId : 2280344
+                 * img : http://img5.mtime.cn/ph/2017/10/17/184748.77500020_1280X720X2.jpg
+                 * name : 茱蒂蒙·琼查容苏因
+                 * nameEn : Chutimon Chuengcharoensukying
+                 * roleImg :
+                 * roleName : Lynn
                  */
 
                 private int actorId;
@@ -849,13 +892,13 @@ public class MovieDetail {
 
         public static class BoxOfficeBean {
             /**
-             * movieId : 125805
-             * ranking : 0
-             * todayBox : 0
-             * todayBoxDes :
-             * todayBoxDesUnit :
-             * totalBox : 112780408790
-             * totalBoxDes : 11.28亿元
+             * movieId : 247578
+             * ranking : 3
+             * todayBox : 524619249
+             * todayBoxDes : 524.62
+             * todayBoxDesUnit : 今日实时(万)
+             * totalBox : 17157780945
+             * totalBoxDes : 1.72
              * totalBoxUnit : 累计票房(亿)
              */
 
@@ -935,13 +978,13 @@ public class MovieDetail {
 
         public static class LiveBean {
             /**
-             * count : 1
-             * img : http://img5.mtime.cn/mg/2017/02/04/165331.18709160.jpg
-             * liveId : 224
-             * playNumTag : 83.2万次播放
+             * count : 0
+             * img :
+             * liveId : 0
+             * playNumTag :
              * playTag :
-             * status : 4
-             * title : 电影《极限特工：终极回归》中国首映礼
+             * status : 3
+             * title :
              */
 
             private int count;

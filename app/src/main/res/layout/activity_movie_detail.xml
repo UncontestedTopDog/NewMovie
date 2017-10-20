@@ -189,6 +189,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rgut"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/r1"
@@ -214,6 +215,12 @@
                     android:src="@drawable/pull_down" />
 
             </RelativeLayout>
+
+            <com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard
+                android:layout_below="@+id/rgut"
+                android:id="@+id/director_and_actor_brierf_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard>
 
         </RelativeLayout>
 

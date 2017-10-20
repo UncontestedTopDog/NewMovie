@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_below="@+id/banner"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="45dp">
+        <TextView
+            android:text="演职人员"
+            android:layout_marginLeft="15dp"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/activity_back_color"
+                android:layout_marginRight="15dp"
+                android:id="@+id/showing_amount"
+                android:layout_alignParentRight="true"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全部"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/icon_more_right" />
+
+    </RelativeLayout>
+
+    <com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorRecyclerView
+        android:id="@+id/director_and_actor_recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorRecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/color_f3f3f3"/>
+
+</LinearLayout>
