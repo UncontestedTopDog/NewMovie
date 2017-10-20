@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.NetWork;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

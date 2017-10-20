@@ -8,10 +8,10 @@
     android:background="@color/black"
     tools:context="com.example.administrator.newmovie.Trailer.TrailerListActivity">
 
-    <com.example.administrator.newmovie.TitleBar
+    <com.example.administrator.newmovie.CustomView.TitleBar
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.example.administrator.newmovie.TitleBar>
+        android:layout_height="wrap_content"></com.example.administrator.newmovie.CustomView.TitleBar>
 
     <com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout
         android:id="@+id/trailer_refreshlayout"

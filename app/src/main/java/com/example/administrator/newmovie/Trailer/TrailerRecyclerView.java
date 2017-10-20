@@ -1,13 +1,14 @@
 package com.example.administrator.newmovie.Trailer;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.administrator.newmovie.Data.TrailerData;
 
 import java.util.List;
 

@@ -1,6 +1,9 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.Data;
 
-import com.example.administrator.newmovie.Trailer.TrailerData;
+import com.example.administrator.newmovie.Data.ComingMovie;
+import com.example.administrator.newmovie.Data.MovieDetail;
+import com.example.administrator.newmovie.Data.ShowingMovie;
+import com.example.administrator.newmovie.Data.TrailerData;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;

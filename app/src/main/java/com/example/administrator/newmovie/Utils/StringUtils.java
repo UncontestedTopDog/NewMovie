@@ -1,5 +1,5 @@
 
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.Utils;
 
 import java.security.MessageDigest;
 import java.util.regex.Matcher;

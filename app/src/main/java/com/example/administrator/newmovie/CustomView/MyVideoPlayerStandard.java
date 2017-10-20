@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.CustomView;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -6,6 +6,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.administrator.newmovie.R;
 
 import cn.jzvd.JZUserAction;
 import cn.jzvd.JZUtils;

@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:layout_height="wrap_content">
 
-    <com.example.administrator.newmovie.MyVideoPlayerStandard
+    <com.example.administrator.newmovie.CustomView.MyVideoPlayerStandard
         android:id="@+id/trailer_player"
         android:layout_width="match_parent"
         android:layout_height="202dp"/>
@@ -15,7 +15,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.example.administrator.newmovie.RoundImageView
+        <com.example.administrator.newmovie.CustomView.RoundImageView
             android:id="@+id/image"
             android:src="@drawable/night_sky_bg"
             android:layout_margin="10dp"

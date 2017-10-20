@@ -1,10 +1,12 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.CustomView;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.administrator.newmovie.R;
 
 /**
  * Created by Administrator on 2017/10/11.

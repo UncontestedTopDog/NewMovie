@@ -10,10 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.administrator.newmovie.ImageHelper;
+import com.bumptech.glide.Glide;
 import com.example.administrator.newmovie.MovieDetailActivity;
 import com.example.administrator.newmovie.R;
-import com.example.administrator.newmovie.ShowingMovie;
+import com.example.administrator.newmovie.Data.ShowingMovie;
 
 /**
  * Created by Administrator on 2017/9/14.
@@ -79,7 +79,7 @@ public class MovieCard extends RelativeLayout {
 
         movieId = showingMovie.getId();
 
-        ImageHelper.loadImageIntoImageView(getContext(), showingMovie.getImg(), poster);
+        Glide.with(getContext()).load(showingMovie.getImg()).into(poster);
 
         grade.setText(showingMovie.getR() + "");
         grade.setVisibility(showingMovie.getR() > 0 ? VISIBLE : INVISIBLE);

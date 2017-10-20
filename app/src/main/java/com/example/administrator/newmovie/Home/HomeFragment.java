@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.administrator.newmovie.ImageHelper;
-import com.example.administrator.newmovie.MovieManager;
+import com.bumptech.glide.Glide;
+import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.R;
-import com.example.administrator.newmovie.ShowingMovie;
+import com.example.administrator.newmovie.Data.ShowingMovie;
 import com.zhouwei.mzbanner.MZBannerView;
 import com.zhouwei.mzbanner.holder.MZHolderCreator;
 import com.zhouwei.mzbanner.holder.MZViewHolder;
@@ -95,7 +95,7 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void onBind(Context context, int position, String data) {
-            ImageHelper.loadImageIntoImageView(getContext(), data, mImageView);
+            Glide.with(getContext()).load(data).into(mImageView);
         }
 
     }

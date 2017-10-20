@@ -2,8 +2,6 @@ package com.example.administrator.newmovie.Review;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -11,12 +9,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.administrator.newmovie.ImageHelper;
+import com.bumptech.glide.Glide;
 import com.example.administrator.newmovie.R;
-import com.example.administrator.newmovie.ShowingMovie;
+import com.example.administrator.newmovie.Data.ShowingMovie;
 import com.example.administrator.newmovie.Trailer.TrailerListActivity;
-
-import java.io.ByteArrayOutputStream;
 
 /**
  * Created by Administrator on 2017/9/18.
@@ -78,7 +74,7 @@ public class ShowingListCard extends RelativeLayout {
             }
         });
 
-        ImageHelper.loadImageIntoImageView(getContext(), showingMovie.getImg(), moviePoster);
+        Glide.with(getContext()).load(showingMovie.getImg()).into(moviePoster);
         for (int i = 0 ; i < showingMovie.getVersions().size();i++){
             if (showingMovie.getVersions().get(i).getEnumX()==2)
                 is3D.setVisibility(VISIBLE);

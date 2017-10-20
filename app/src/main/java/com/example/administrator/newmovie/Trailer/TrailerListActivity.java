@@ -1,22 +1,15 @@
 package com.example.administrator.newmovie.Trailer;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
-import com.example.administrator.newmovie.MovieManager;
+import com.example.administrator.newmovie.Data.TrailerData;
+import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.R;
-import com.example.administrator.newmovie.RoundImageView;
-import com.example.administrator.newmovie.TitleBar;
+import com.example.administrator.newmovie.CustomView.TitleBar;
 import com.trello.rxlifecycle.components.RxActivity;
 
 import java.util.List;

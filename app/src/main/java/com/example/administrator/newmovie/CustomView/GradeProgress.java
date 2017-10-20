@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.CustomView;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -13,6 +13,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.example.administrator.newmovie.R;
 
 /**
  * Created by Administrator on 2017/10/17.
@@ -44,7 +46,7 @@ public class GradeProgress extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.icon_rocket);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icon_rocket);
         w = bitmap.getWidth();// 宽度值
         h = MeasureSpec.getSize(heightMeasureSpec);// 高度值
         h2 = bitmap.getHeight() ;

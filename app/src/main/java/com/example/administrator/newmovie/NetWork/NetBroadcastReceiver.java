@@ -1,9 +1,11 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.NetWork;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+
+import com.example.administrator.newmovie.BaseActivity;
 
 /**
  * Created by Administrator on 2017/9/14.

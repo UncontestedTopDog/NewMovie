@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.administrator.newmovie.MainActivity;
 import com.example.administrator.newmovie.R;
-import com.example.administrator.newmovie.ShowingMovie;
+import com.example.administrator.newmovie.Data.ShowingMovie;
 
 import java.util.List;
 

@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
-import com.example.administrator.newmovie.MovieManager;
+import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.R;
-import com.example.administrator.newmovie.ShowingMovie;
+import com.example.administrator.newmovie.Data.ShowingMovie;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;

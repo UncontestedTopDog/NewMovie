@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.administrator.newmovie.ComingMovie;
+import com.example.administrator.newmovie.Data.ComingMovie;
 
 import java.util.List;
 

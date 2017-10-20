@@ -9,13 +9,15 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.RotateAnimation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
-import com.example.administrator.newmovie.Trailer.TrailerData;
+import com.example.administrator.newmovie.CustomView.GradeProgress;
+import com.example.administrator.newmovie.CustomView.LoadingView;
+import com.example.administrator.newmovie.Data.MovieDetail;
+import com.example.administrator.newmovie.Data.MovieManager;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;

@@ -110,7 +110,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true">
 
-                    <com.example.administrator.newmovie.RoundImageView
+                    <com.example.administrator.newmovie.CustomView.RoundImageView
                         android:id="@+id/poster"
                         android:layout_width="116dp"
                         android:layout_height="168dp"
@@ -177,7 +177,7 @@
                         android:textSize="18dp"
                         android:typeface="monospace" />
 
-                    <com.example.administrator.newmovie.GradeProgress
+                    <com.example.administrator.newmovie.CustomView.GradeProgress
                         android:id="@+id/seek_bar"
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
@@ -221,7 +221,7 @@
 
     </com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout>
 
-    <com.example.administrator.newmovie.LoadingView
+    <com.example.administrator.newmovie.CustomView.LoadingView
         android:id="@+id/loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

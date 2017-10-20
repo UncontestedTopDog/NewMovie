@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.Data;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.CustomView;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,6 +9,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import com.example.administrator.newmovie.R;
 
 /**
  * Created by Administrator on 2017/10/19.

@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.CustomView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,6 +22,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
+import com.example.administrator.newmovie.R;
 
 /**
  * Created by Administrator on 2017/10/19.

@@ -1,16 +1,16 @@
 package com.example.administrator.newmovie.Trailer;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.util.AttributeSet;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.administrator.newmovie.MyVideoPlayerStandard;
+import com.example.administrator.newmovie.Data.TrailerData;
+import com.example.administrator.newmovie.CustomView.MyVideoPlayerStandard;
 import com.example.administrator.newmovie.R;
-import com.example.administrator.newmovie.RoundImageView;
+import com.example.administrator.newmovie.CustomView.RoundImageView;
 
 import cn.jzvd.JZVideoPlayer;
 

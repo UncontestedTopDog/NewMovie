@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
+import com.example.administrator.newmovie.NetWork.NetChange;
+import com.example.administrator.newmovie.NetWork.NetworkHelper;
+
 /**
  * Created by Administrator on 2017/9/14.
  */

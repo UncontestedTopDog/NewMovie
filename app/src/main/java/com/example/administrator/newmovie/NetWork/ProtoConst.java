@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.NetWork;
 
 /**
  * Created by Administrator on 2017/9/13.

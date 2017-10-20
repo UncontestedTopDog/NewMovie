@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie.Trailer;
+package com.example.administrator.newmovie.Data;
 
 import java.util.List;
 

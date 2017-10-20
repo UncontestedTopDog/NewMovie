@@ -9,8 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.administrator.newmovie.ComingMovie;
-import com.example.administrator.newmovie.ImageHelper;
+import com.bumptech.glide.Glide;
+import com.example.administrator.newmovie.Data.ComingMovie;
 import com.example.administrator.newmovie.R;
 
 /**
@@ -76,7 +76,7 @@ public class ComingListCard extends RelativeLayout {
                     + moviecomingsBean.getRDay() - 36) % 7;
             mComingTimeWeek.setText(getDayOfWeek(week));
         }
-        ImageHelper.loadImageIntoImageView(getContext(), moviecomingsBean.getImage(), mPoster);
+        Glide.with(getContext()).load(moviecomingsBean.getImage()).into(mPoster);
         mComingName.setText(moviecomingsBean.getTitle());
         String wantedcount = String.format("<font color=\"#DA8E6A\">%d</font><font color=\"#6E6E6E\">/%s</font>", moviecomingsBean.getWantedCount(), "人想看");
         mWantedCount.setText(Html.fromHtml(wantedcount));

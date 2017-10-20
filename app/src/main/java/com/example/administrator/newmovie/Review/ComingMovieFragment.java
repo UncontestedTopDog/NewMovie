@@ -14,8 +14,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
-import com.example.administrator.newmovie.ComingMovie;
-import com.example.administrator.newmovie.MovieManager;
+import com.example.administrator.newmovie.Data.ComingMovie;
+import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.R;
 
 import rx.android.schedulers.AndroidSchedulers;

@@ -1,8 +1,6 @@
-package com.example.administrator.newmovie;
+package com.example.administrator.newmovie.Data;
 
 import android.support.annotation.NonNull;
-
-import com.example.administrator.newmovie.Trailer.TrailerData;
 
 import rx.Observable;
 

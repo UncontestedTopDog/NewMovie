@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.example.administrator.newmovie.Home.HomeFragment;
 import com.example.administrator.newmovie.Homework.HomeworkFragment;
 import com.example.administrator.newmovie.Me.MeFragment;
+import com.example.administrator.newmovie.NetWork.NetworkHelper;
 import com.example.administrator.newmovie.Review.ReViewFragment;
 
 public class MainActivity extends BaseActivity {
