@@ -4,6 +4,7 @@ package com.example.administrator.newmovie;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.MainThread;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -18,15 +19,25 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.administrator.newmovie.Data.DoubanMovieId;
+import com.example.administrator.newmovie.Data.MaoyanMovieId;
 import com.example.administrator.newmovie.Data.MovieManager;
+import com.example.administrator.newmovie.Data.TimeMovieId;
 import com.example.administrator.newmovie.Home.HomeFragment;
 import com.example.administrator.newmovie.Homework.HomeworkFragment;
 import com.example.administrator.newmovie.Me.MeFragment;
 import com.example.administrator.newmovie.NetWork.NetworkHelper;
 import com.example.administrator.newmovie.Review.ReViewFragment;
+import com.example.administrator.newmovie.Utils.LogUtil;
 import com.example.administrator.newmovie.Utils.TimeUtil;
+import com.google.gson.Gson;
 
 import java.util.Date;
+import java.util.List;
+
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity {
 
@@ -177,17 +188,20 @@ public class MainActivity extends BaseActivity {
             case HOME_PAGE_TAB:
                 mCurrTab = HOME_PAGE_TAB;
                 fakeStatus.setVisibility(View.GONE);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            String s = MovieManager.INSTANCE().getMaoYanMovieIdByMovieName("天才枪手");
-                            Log.i("LOG",s);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }).start();
+                MovieManager.INSTANCE().getTimeMovieIdByMovieNameAndTime("天才枪手",TimeUtil.getCurrentTime())
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Action1<String>() {
+                            @Override
+                            public void call(String result) {
+                                TimeMovieId timeMovieId = MovieManager.INSTANCE().handTimeMovieIdInitialData(result);
+                            }
+                        }, new Action1<Throwable>() {
+                            @Override
+                            public void call(Throwable throwable) {
+                                Log.i("TCQS",throwable.toString());
+                            }
+                        });
                 break;
             case REVIEW_TAB:
                 mCurrTab = REVIEW_TAB;

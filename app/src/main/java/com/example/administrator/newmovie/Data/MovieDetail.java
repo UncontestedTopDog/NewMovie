@@ -904,7 +904,7 @@ public class MovieDetail {
 
             private int movieId;
             private int ranking;
-            private int todayBox;
+            private double todayBox;
             private String todayBoxDes;
             private String todayBoxDesUnit;
             private long totalBox;
@@ -927,7 +927,7 @@ public class MovieDetail {
                 this.ranking = ranking;
             }
 
-            public int getTodayBox() {
+            public double getTodayBox() {
                 return todayBox;
             }
 

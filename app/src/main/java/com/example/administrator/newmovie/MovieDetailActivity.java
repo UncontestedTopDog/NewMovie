@@ -16,9 +16,13 @@ import com.bumptech.glide.Glide;
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
 import com.example.administrator.newmovie.CustomView.GradeProgress;
 import com.example.administrator.newmovie.CustomView.LoadingView;
+import com.example.administrator.newmovie.CustomView.NineGridView;
 import com.example.administrator.newmovie.Data.MovieDetail;
 import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -42,6 +46,8 @@ public class MovieDetailActivity extends AppCompatActivity {
     private DirectorAndActorBrierfCard directorAndActorBrierfCard ;
     private FireworkyPullToRefreshLayout mFireworkyPullToRefreshLayout;
     private int movieId ;
+    private NineGridView nineGridView ;
+    private List<String> imageList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +66,16 @@ public class MovieDetailActivity extends AppCompatActivity {
         releaseTime = (TextView) findViewById(R.id.release_time);
         poster = (ImageView) findViewById(R.id.poster);
         loadingView = (LoadingView) findViewById(R.id.loading);
+        nineGridView = (NineGridView) findViewById(R.id.nine_grid_view);
         directorAndActorBrierfCard = (DirectorAndActorBrierfCard) findViewById(R.id.director_and_actor_brierf_card);
         mFireworkyPullToRefreshLayout = (FireworkyPullToRefreshLayout) findViewById(R.id.fireworkypulltorefreshlayout);
         mFireworkyPullToRefreshLayout.setOnRefreshListener(new FireworkyPullToRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getDetailByLocationIdAndmovieId(290, movieId);
+                getDetailByLocationIdAndMovieId(290, movieId);
             }
         });
-        getDetailByLocationIdAndmovieId(290, movieId);
+        getDetailByLocationIdAndMovieId(290, movieId);
 
         mPull.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,9 +110,9 @@ public class MovieDetailActivity extends AppCompatActivity {
         v.startAnimation(set);
     }
 
-    private void getDetailByLocationIdAndmovieId(int locationId, final int movieId) {
+    private void getDetailByLocationIdAndMovieId(int locationId, final int movieId) {
         MovieManager.INSTANCE()
-                .getDetailByLocationIdAndmovieId(locationId, movieId)
+                .getDetailByLocationIdAndMovieId(locationId, movieId)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<MovieDetail>() {
@@ -117,7 +124,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        getDetailByLocationIdAndmovieId(290, movieId);
+                        getDetailByLocationIdAndMovieId(290, movieId);
                         Log.e("MAIN", throwable.toString());
                     }
                 });
@@ -152,6 +159,13 @@ public class MovieDetailActivity extends AppCompatActivity {
         Glide.with(this).load(movieDetail.getData().getBasic().getImg()).into(poster);
         loadingView.setVisibility(View.GONE);
         directorAndActorBrierfCard.bindData(movieDetail.getData().getBasic().getActors(),movieDetail.getData().getBasic().getDirector());
+        for (MovieDetail.DataBean.BasicBean.StageImgBean.ListBean listBean :movieDetail.getData().getBasic().getStageImg().getList())
+        {
+            imageList.add(listBean.getImgUrl());
+            if (imageList.size()>=9)
+                break;
+        }
+        nineGridView.bindData(imageList);
     }
 
 }

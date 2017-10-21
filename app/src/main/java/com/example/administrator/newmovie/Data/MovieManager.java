@@ -3,6 +3,10 @@ package com.example.administrator.newmovie.Data;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
+import java.util.List;
+
 import rx.Observable;
 
 /**
@@ -29,38 +33,32 @@ public class MovieManager {
         return MovieService.getTrailerByPageIndexAndMovieId(pageIndex, movieId);
     }
 
-    public Observable<MovieDetail> getDetailByLocationIdAndmovieId(@NonNull int locationId, @NonNull int movieId) {
-        return MovieService.getDetailByLocationIdAndmovieId(locationId, movieId);
+    public Observable<MovieDetail> getDetailByLocationIdAndMovieId(@NonNull int locationId, @NonNull int movieId) {
+        return MovieService.getDetailByLocationIdAndMovieId(locationId, movieId);
     }
 
-    public String  getTimeMovieIdByMovieName(String movieName,String time) throws Exception {
-        String path = "http://service.channel.mtime.com/Search.api?" +
-                "Ajax_CallBack=true&Ajax_CallBackType=Mtime.Channel.Services&Ajax_CallBackMethod=GetSearchResult&Ajax_CrossDomain=1&Ajax_RequestUrl=" +
-                "http://search.mtime.com/search/?q=" +
-                movieName+"&t=0&t="+time+"64523&Ajax_CallBackArgument0="+
-                movieName+"&Ajax_CallBackArgument1=0&Ajax_CallBackArgument2=373&Ajax_CallBackArgument3=0&Ajax_CallBackArgument4=1";
-        String result = HtmlService.getHtml(path);
-        int i = result.indexOf("movieId");
-        if (i==-1)
-            return null ;
-        result = result.substring(i+9,result.length());
-        i = result.indexOf(",");
-        if (i==-1)
-            return null ;
-        return result.substring(0,i);
+    public Observable<List<DoubanMovieId>> getDoubanMovieIdByMovieName(@NonNull String movieName) {
+        return MovieService.getDoubanMovieIdByMovieName(movieName);
     }
 
-    public String  getMaoYanMovieIdByMovieName(String movieName) throws Exception {
-        String path = "http://maoyan.com/query?kw="+movieName;
-        String result = HtmlService.getHtml(path);
-        int i = result.indexOf("data-val=\"{movieId:");
-        if (i==-1)
-            return null ;
-        result = result.substring(i+19,result.length());
-        i = result.indexOf("}");
-        if (i==-1)
-            return null ;
-        return result.substring(0,i);
+    public Observable<MaoyanMovieId> getMaoyanMovieIdByMovieName(@NonNull String movieName) {
+        return MovieService.getMaoyanMovieIdByMovieName(movieName);
+    }
+
+    public Observable<String> getTimeMovieIdByMovieNameAndTime(@NonNull String movieName,@NonNull String time) {
+        return MovieService.getTimeMovieIdByMovieNameAndTime(movieName,time);
+    }
+
+    public TimeMovieId handTimeMovieIdInitialData(String result){
+        TimeMovieId timeMovieId ;
+        String s = " var getSearchResult = ";
+        int i = result.indexOf(s);
+        result = result.substring(s.length()-1,result.length()-3);
+        Gson gson = new Gson();
+        timeMovieId = gson.fromJson(result, TimeMovieId.class);
+        for (TimeMovieId.ValueBean.MovieResultBean.MoreMoviesBean moreMoviesBean : timeMovieId.getValue().getMovieResult().getMoreMovies())
+            Log.i("TCQS",moreMoviesBean.getMovieId()+moreMoviesBean.getMovieTitle());
+        return timeMovieId;
     }
 
 }
