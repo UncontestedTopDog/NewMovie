@@ -63,11 +63,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         mNetErrorNoticeBar = (RelativeLayout) findViewById(R.id.net_error_notice_bar);
 
-        try {
-            MovieManager.INSTANCE().getTimeMovieIdByMovieName("天才枪手", TimeUtil.getCurrentTime());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         fakeStatus = findViewById(R.id.fake_status_bar);
         mHomePageTab = (TextView) findViewById(R.id.home_textview);
         mReviewTab = (TextView) findViewById(R.id.review_textview);
@@ -182,7 +177,17 @@ public class MainActivity extends BaseActivity {
             case HOME_PAGE_TAB:
                 mCurrTab = HOME_PAGE_TAB;
                 fakeStatus.setVisibility(View.GONE);
-
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            String s = MovieManager.INSTANCE().getMaoYanMovieIdByMovieName("天才枪手");
+                            Log.i("LOG",s);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
                 break;
             case REVIEW_TAB:
                 mCurrTab = REVIEW_TAB;

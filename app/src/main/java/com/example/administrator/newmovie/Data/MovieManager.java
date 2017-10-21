@@ -1,6 +1,7 @@
 package com.example.administrator.newmovie.Data;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import rx.Observable;
 
@@ -40,8 +41,26 @@ public class MovieManager {
                 movieName+"&Ajax_CallBackArgument1=0&Ajax_CallBackArgument2=373&Ajax_CallBackArgument3=0&Ajax_CallBackArgument4=1";
         String result = HtmlService.getHtml(path);
         int i = result.indexOf("movieId");
-        System.out.println(result.substring(i,result.length()));
-        return null  ;
+        if (i==-1)
+            return null ;
+        result = result.substring(i+9,result.length());
+        i = result.indexOf(",");
+        if (i==-1)
+            return null ;
+        return result.substring(0,i);
+    }
+
+    public String  getMaoYanMovieIdByMovieName(String movieName) throws Exception {
+        String path = "http://maoyan.com/query?kw="+movieName;
+        String result = HtmlService.getHtml(path);
+        int i = result.indexOf("data-val=\"{movieId:");
+        if (i==-1)
+            return null ;
+        result = result.substring(i+19,result.length());
+        i = result.indexOf("}");
+        if (i==-1)
+            return null ;
+        return result.substring(0,i);
     }
 
 }
