@@ -1,11 +1,17 @@
 package com.example.administrator.newmovie;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.RotateAnimation;
@@ -46,8 +52,10 @@ public class MovieDetailActivity extends AppCompatActivity {
     private DirectorAndActorBrierfCard directorAndActorBrierfCard ;
     private FireworkyPullToRefreshLayout mFireworkyPullToRefreshLayout;
     private int movieId ;
-    private NineGridView nineGridView ;
+//    private NineGridView nineGridView ;
     private List<String> imageList = new ArrayList<>();
+    private RecyclerView nineGridList ;
+    private MyAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +74,11 @@ public class MovieDetailActivity extends AppCompatActivity {
         releaseTime = (TextView) findViewById(R.id.release_time);
         poster = (ImageView) findViewById(R.id.poster);
         loadingView = (LoadingView) findViewById(R.id.loading);
-        nineGridView = (NineGridView) findViewById(R.id.nine_grid_view);
+//        nineGridView = (NineGridView) findViewById(R.id.nine_grid_view);
+        nineGridList = (RecyclerView) findViewById(R.id.nine_gird_list);
+        myAdapter = new MyAdapter(this);
+        nineGridList.setLayoutManager(new GridLayoutManager(this, 3));
+        nineGridList.setAdapter(myAdapter);
         directorAndActorBrierfCard = (DirectorAndActorBrierfCard) findViewById(R.id.director_and_actor_brierf_card);
         mFireworkyPullToRefreshLayout = (FireworkyPullToRefreshLayout) findViewById(R.id.fireworkypulltorefreshlayout);
         mFireworkyPullToRefreshLayout.setOnRefreshListener(new FireworkyPullToRefreshLayout.OnRefreshListener() {
@@ -162,10 +174,48 @@ public class MovieDetailActivity extends AppCompatActivity {
         for (MovieDetail.DataBean.BasicBean.StageImgBean.ListBean listBean :movieDetail.getData().getBasic().getStageImg().getList())
         {
             imageList.add(listBean.getImgUrl());
-            if (imageList.size()>=9)
-                break;
         }
-        nineGridView.bindData(imageList);
+        myAdapter.notifyDataSetChanged();
+
+    }
+
+    private class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
+
+        private Context context;
+        private Resources resources;
+        private LayoutInflater inflater;
+
+        public MyAdapter(Context context) {
+            this.context = context;
+            this.resources = context.getResources();
+            inflater = LayoutInflater.from(context);
+        }
+
+        @Override
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = inflater.inflate(R.layout.nine_gird_view, parent, false);
+            return new MyViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(MyViewHolder holder, int position){
+            Glide.with(getBaseContext()).load(imageList.get(position)).into(holder.image);
+        }
+
+
+        @Override
+        public int getItemCount() {
+            return imageList.size()>9? 9 :imageList.size() ;
+        }
+    }
+
+    private class MyViewHolder extends RecyclerView.ViewHolder {
+        public ImageView image;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            image = (ImageView) itemView.findViewById(R.id.image);
+        }
     }
 
 }

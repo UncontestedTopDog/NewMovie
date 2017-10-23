@@ -193,13 +193,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard>
 
-            <com.example.administrator.newmovie.CustomView.NineGridView
-                android:id="@+id/nine_grid_view"
-                android:layout_below="@+id/rgut"
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@+id/director_and_actor_brierf_card"
+                android:id="@+id/nine_gird_list"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"></com.example.administrator.newmovie.CustomView.NineGridView>
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
-        </RelativeLayout>
+               </RelativeLayout>
 
     </ScrollView>
 
