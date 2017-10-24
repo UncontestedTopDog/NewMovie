@@ -37,6 +37,10 @@ public class MovieManager {
         return MovieService.getDetailByLocationIdAndMovieId(locationId, movieId);
     }
 
+    public Observable<MovieImageAll> getMovieImageAllByMovieId(@NonNull int movieId) {
+        return MovieService.getMovieImageAllByMovieId(movieId);
+    }
+
     public Observable<List<DoubanMovieId>> getDoubanMovieIdByMovieName(@NonNull String movieName) {
         return MovieService.getDoubanMovieIdByMovieName(movieName);
     }

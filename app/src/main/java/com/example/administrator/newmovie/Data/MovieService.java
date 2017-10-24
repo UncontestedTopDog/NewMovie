@@ -127,6 +127,18 @@ public class MovieService {
         return retrofit.create(IService.class).getTimeMovieIdByMovieNameAndTime(s1 ,s2 ,s3 ,s4,s5,s6,s7,s8,s9,s0);
     }
 
+    public static Observable<MovieImageAll> getMovieImageAllByMovieId(int movieId) {
+
+        String URL = "https://api-m.mtime.cn/Movie/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(IService.class).getMovieImageAllByMovieId(movieId);
+    }
+
     private interface IService {
         @GET("LocationMovies.api")
         Observable<ShowingMovie> getShowingMovieByLocationId(
@@ -173,6 +185,11 @@ public class MovieService {
                 @Query("Ajax_CallBackArgument4") String s0
                 );
 
+
+        @GET("ImageAll.api")
+        Observable<MovieImageAll> getMovieImageAllByMovieId(
+                @Query("movieId") int movieId
+        );
     }
 
 }

@@ -24,6 +24,7 @@ import com.example.administrator.newmovie.CustomView.GradeProgress;
 import com.example.administrator.newmovie.CustomView.LoadingView;
 import com.example.administrator.newmovie.CustomView.NineGridView;
 import com.example.administrator.newmovie.Data.MovieDetail;
+import com.example.administrator.newmovie.Data.MovieImageAll;
 import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard;
 
@@ -36,6 +37,7 @@ import rx.schedulers.Schedulers;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
+    private static final String TAG = "MovieDetailActivity" ;
     private GradeProgress mGradeProgress;
     private TextView movieChineseName;
     private TextView movieForeignName;
@@ -56,6 +58,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private List<String> imageList = new ArrayList<>();
     private RecyclerView nineGridList ;
     private MyAdapter myAdapter;
+    private MovieImageAll movieImageAll ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,10 +87,10 @@ public class MovieDetailActivity extends AppCompatActivity {
         mFireworkyPullToRefreshLayout.setOnRefreshListener(new FireworkyPullToRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getDetailByLocationIdAndMovieId(290, movieId);
+                getMovieImageAllByMovieId(movieId);
             }
         });
-        getDetailByLocationIdAndMovieId(290, movieId);
+        getMovieImageAllByMovieId(movieId);
 
         mPull.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,6 +145,33 @@ public class MovieDetailActivity extends AppCompatActivity {
                 });
     }
 
+    private void getMovieImageAllByMovieId(final int movieId) {
+        MovieManager.INSTANCE()
+                .getMovieImageAllByMovieId(movieId)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<MovieImageAll>() {
+                    @Override
+                    public void call(MovieImageAll movieImageAll) {
+                        String s = "" ;
+                        for (int i = 0 ; i < movieImageAll.getImages().size() ; i++)
+                        {
+//                            if (movieImageAll.getImages().get(i).getType()!=1){
+                            s = movieImageAll.getImages().get(i).getImage();
+                            imageList.add(s);
+//                        }
+                        }
+                        getDetailByLocationIdAndMovieId(290, movieId);
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        getMovieImageAllByMovieId(movieId);
+                        Log.e("MAIN", throwable.toString());
+                    }
+                });
+    }
+
     private void bindData(MovieDetail movieDetail) {
         mGradeProgress.setProgress((int) (movieDetail.getData().getBasic().getOverallRating() * 10));
         mGradeProgress.showGrade();
@@ -171,10 +201,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         Glide.with(this).load(movieDetail.getData().getBasic().getImg()).into(poster);
         loadingView.setVisibility(View.GONE);
         directorAndActorBrierfCard.bindData(movieDetail.getData().getBasic().getActors(),movieDetail.getData().getBasic().getDirector());
-        for (MovieDetail.DataBean.BasicBean.StageImgBean.ListBean listBean :movieDetail.getData().getBasic().getStageImg().getList())
-        {
-            imageList.add(listBean.getImgUrl());
-        }
+        Log.i(TAG,imageList.size()+"");
         myAdapter.notifyDataSetChanged();
 
     }
