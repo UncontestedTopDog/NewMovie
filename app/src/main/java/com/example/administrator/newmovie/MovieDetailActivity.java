@@ -16,9 +16,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
 import com.example.administrator.newmovie.CustomView.GradeProgress;
 import com.example.administrator.newmovie.CustomView.LoadingView;
@@ -49,16 +53,14 @@ public class MovieDetailActivity extends AppCompatActivity {
     private TextView mGut;
     private ImageView mPull;
     private boolean b = true;
-    private MovieDetail mMovieDetail;
     private LoadingView loadingView ;
     private DirectorAndActorBrierfCard directorAndActorBrierfCard ;
     private FireworkyPullToRefreshLayout mFireworkyPullToRefreshLayout;
     private int movieId ;
-//    private NineGridView nineGridView ;
     private List<String> imageList = new ArrayList<>();
     private RecyclerView nineGridList ;
     private MyAdapter myAdapter;
-    private MovieImageAll movieImageAll ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +79,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         releaseTime = (TextView) findViewById(R.id.release_time);
         poster = (ImageView) findViewById(R.id.poster);
         loadingView = (LoadingView) findViewById(R.id.loading);
-//        nineGridView = (NineGridView) findViewById(R.id.nine_grid_view);
         nineGridList = (RecyclerView) findViewById(R.id.nine_gird_list);
         myAdapter = new MyAdapter(this);
         nineGridList.setLayoutManager(new GridLayoutManager(this, 3));
@@ -225,8 +226,21 @@ public class MovieDetailActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(MyViewHolder holder, int position){
-            Glide.with(getBaseContext()).load(imageList.get(position)).into(holder.image);
+        public void onBindViewHolder(final MyViewHolder holder, int position) {
+//            Glide.with(getBaseContext()).load(imageList.get(position)).into(holder.image);
+            Glide.with(getBaseContext())
+                    .load(imageList.get(position))
+                    .centerCrop()
+                    .error(R.drawable.no_pictrue)
+                    .crossFade()
+                    .into(new GlideDrawableImageViewTarget(holder.image) {
+                              @Override
+                              public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+                                  super.onResourceReady(drawable, anim);
+                                  holder.progress.setVisibility(View.GONE);
+                              }
+                          }
+                    );
         }
 
 
@@ -238,10 +252,12 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
+        public ProgressBar progress ;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.image);
+            progress = (ProgressBar) itemView.findViewById(R.id.progress);
         }
     }
 
