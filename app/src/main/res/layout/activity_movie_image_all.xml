@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context="com.example.administrator.newmovie.MovieImageAllActivity">
+
+    <com.example.administrator.newmovie.CustomView.TitleBar
+        android:id="@+id/movie_stage_title"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"></com.example.administrator.newmovie.CustomView.TitleBar>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/image_style_tablayout"
+        android:layout_width="match_parent"
+        app:tabMinWidth="90dp"
+        android:layout_height="50dp"
+        android:background="@color/tab_background"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="scrollable"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="#666970"
+        android:layout_alignParentTop="true"></android.support.design.widget.TabLayout>
+
+    <com.example.administrator.newmovie.StagePhoto.StagePhotoRecyclerView
+        android:id="@+id/photo_grid"
+        android:layout_below="@+id/image_style_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.example.administrator.newmovie.StagePhoto.StagePhotoRecyclerView>
+
+</LinearLayout>

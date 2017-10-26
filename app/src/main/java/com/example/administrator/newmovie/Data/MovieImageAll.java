@@ -1,12 +1,13 @@
 package com.example.administrator.newmovie.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/10/24.
  */
 
-public class MovieImageAll {
+public class MovieImageAll implements Serializable {
 
     private List<ImagesBean> images;
     private List<ImageTypesBean> imageTypes;

@@ -7,12 +7,11 @@
     tools:context="com.example.administrator.newmovie.MovieDetailActivity">
 
     <com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout
+        android:layout_below="@+id/title"
         android:id="@+id/fireworkypulltorefreshlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:ptr_rocketAnimDuration="1000">
-
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,14 +24,14 @@
             <ImageView
                 android:id="@+id/poster_bg"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="250dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/poster_gaosi_bg" />
 
             <RelativeLayout
                 android:id="@+id/r1"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="250dp"
                 android:paddingBottom="10dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -42,7 +41,10 @@
                     android:id="@+id/r_left"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:padding="9dp">
+                    android:padding="9dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -193,11 +195,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard>
 
-            <android.support.v7.widget.RecyclerView
+            <com.example.administrator.newmovie.StagePhoto.StagePhotoBrierfCard
+                android:id="@+id/stage_photo_brierf_card"
                 android:layout_below="@+id/director_and_actor_brierf_card"
-                android:id="@+id/nine_gird_list"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="360dp"></android.support.v7.widget.RecyclerView>
+                android:layout_height="wrap_content"></com.example.administrator.newmovie.StagePhoto.StagePhotoBrierfCard>
 
                </RelativeLayout>
 
@@ -206,10 +210,15 @@
     </com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout>
 
     <RelativeLayout
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@color/app_mian_color"
-        android:padding="10dp">
+        android:paddingTop="30dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
 
         <ImageView
             android:id="@+id/back"
@@ -243,6 +252,9 @@
         android:visibility="visible"
         android:id="@+id/loading"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@color/app_mian_color"
-    android:paddingTop="5dp"
+    android:paddingTop="25dp"
     android:paddingBottom="5dp"
     android:paddingRight="10dp"
     android:paddingLeft="10dp"
-    android:layout_height="50dp">
+    android:layout_height="70dp">
 
     <ImageButton
         android:id="@+id/back"

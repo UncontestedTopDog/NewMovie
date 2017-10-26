@@ -8,6 +8,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.administrator.newmovie.Data.MovieDetail;
 import com.example.administrator.newmovie.R;
 
@@ -44,16 +47,42 @@ public class DirectorAndActorCard extends LinearLayout {
     }
 
     public void bindData(MovieDetail.DataBean.BasicBean.DirectorBean directorBean) {
-        Glide.with(getContext()).load(directorBean.getImg()).into(img);
+//        Glide.with(getContext()).load(directorBean.getImg()).into(img);
+        Glide.with(getContext())
+                .load(directorBean.getImg())
+                .centerCrop()
+                .placeholder(R.drawable.no_pictrue)
+                .error(R.drawable.download_fail_hint)
+                .crossFade()
+                .into(new GlideDrawableImageViewTarget(img) {
+                          @Override
+                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+                              super.onResourceReady(drawable, anim);
+                          }
+                      }
+                );
         name.setText(directorBean.getName());
         nameen.setText(directorBean.getNameEn());
         rolename.setText("导演");
     }
     public void bindData(MovieDetail.DataBean.BasicBean.ActorsBean actorsBean) {
-        Glide.with(getContext()).load(actorsBean.getImg()).into(img);
+//        Glide.with(getContext()).load(actorsBean.getImg()).into(img);
+        Glide.with(getContext())
+                .load(actorsBean.getImg())
+                .centerCrop()
+                .placeholder(R.drawable.no_pictrue)
+                .error(R.drawable.download_fail_hint)
+                .crossFade()
+                .into(new GlideDrawableImageViewTarget(img) {
+                          @Override
+                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+                              super.onResourceReady(drawable, anim);
+                          }
+                      }
+                );
         name.setText(actorsBean.getName());
         nameen.setText(actorsBean.getNameEn());
-        rolename.setText(actorsBean.getRoleName());
+        rolename.setText("饰："+actorsBean.getRoleName());
     }
 
 }

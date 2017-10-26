@@ -26,11 +26,12 @@ import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
 import com.example.administrator.newmovie.CustomView.GradeProgress;
 import com.example.administrator.newmovie.CustomView.LoadingView;
-import com.example.administrator.newmovie.CustomView.NineGridView;
+import com.example.administrator.newmovie.CustomView.RoundImageView;
 import com.example.administrator.newmovie.Data.MovieDetail;
 import com.example.administrator.newmovie.Data.MovieImageAll;
 import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard;
+import com.example.administrator.newmovie.StagePhoto.StagePhotoBrierfCard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-public class MovieDetailActivity extends AppCompatActivity {
+public class MovieDetailActivity extends BaseActivity {
 
     private static final String TAG = "MovieDetailActivity" ;
     private GradeProgress mGradeProgress;
@@ -49,7 +50,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private TextView style;
     private TextView lengthFilm;
     private TextView releaseTime;
-    private ImageView poster;
+    private RoundImageView poster;
     private TextView mGut;
     private ImageView mPull;
     private boolean b = true;
@@ -58,8 +59,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private FireworkyPullToRefreshLayout mFireworkyPullToRefreshLayout;
     private int movieId ;
     private List<String> imageList = new ArrayList<>();
-    private RecyclerView nineGridList ;
-    private MyAdapter myAdapter;
+    private StagePhotoBrierfCard stagePhotoBrierfCard ;
 
 
     @Override
@@ -77,12 +77,9 @@ public class MovieDetailActivity extends AppCompatActivity {
         style = (TextView) findViewById(R.id.style);
         lengthFilm = (TextView) findViewById(R.id.length_film);
         releaseTime = (TextView) findViewById(R.id.release_time);
-        poster = (ImageView) findViewById(R.id.poster);
+        poster = (RoundImageView) findViewById(R.id.poster);
         loadingView = (LoadingView) findViewById(R.id.loading);
-        nineGridList = (RecyclerView) findViewById(R.id.nine_gird_list);
-        myAdapter = new MyAdapter(this);
-        nineGridList.setLayoutManager(new GridLayoutManager(this, 3));
-        nineGridList.setAdapter(myAdapter);
+        stagePhotoBrierfCard = (StagePhotoBrierfCard) findViewById(R.id.stage_photo_brierf_card);
         directorAndActorBrierfCard = (DirectorAndActorBrierfCard) findViewById(R.id.director_and_actor_brierf_card);
         mFireworkyPullToRefreshLayout = (FireworkyPullToRefreshLayout) findViewById(R.id.fireworkypulltorefreshlayout);
         mFireworkyPullToRefreshLayout.setOnRefreshListener(new FireworkyPullToRefreshLayout.OnRefreshListener() {
@@ -154,14 +151,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                 .subscribe(new Action1<MovieImageAll>() {
                     @Override
                     public void call(MovieImageAll movieImageAll) {
-                        String s = "" ;
-                        for (int i = 0 ; i < movieImageAll.getImages().size() ; i++)
-                        {
-//                            if (movieImageAll.getImages().get(i).getType()!=1){
-                            s = movieImageAll.getImages().get(i).getImage();
-                            imageList.add(s);
-//                        }
-                        }
+                        stagePhotoBrierfCard.bindData(movieImageAll);
                         getDetailByLocationIdAndMovieId(290, movieId);
                     }
                 }, new Action1<Throwable>() {
@@ -200,65 +190,22 @@ public class MovieDetailActivity extends AppCompatActivity {
         s = sb.toString() + movieDetail.getData().getBasic().getReleaseArea();
         releaseTime.setText(s);
         Glide.with(this).load(movieDetail.getData().getBasic().getImg()).into(poster);
+//        Glide.with(this)
+//                .load(movieDetail.getData().getBasic().getImg())
+//                .centerCrop()
+//                .placeholder(R.drawable.no_pictrue)
+//                .error(R.drawable.download_fail_hint)
+//                .crossFade()
+//                .into(new GlideDrawableImageViewTarget(poster) {
+//                          @Override
+//                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+//                              super.onResourceReady(drawable, anim);
+//                          }
+//                      }
+//                );
+
         loadingView.setVisibility(View.GONE);
         directorAndActorBrierfCard.bindData(movieDetail.getData().getBasic().getActors(),movieDetail.getData().getBasic().getDirector());
-        Log.i(TAG,imageList.size()+"");
-        myAdapter.notifyDataSetChanged();
-
-    }
-
-    private class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
-
-        private Context context;
-        private Resources resources;
-        private LayoutInflater inflater;
-
-        public MyAdapter(Context context) {
-            this.context = context;
-            this.resources = context.getResources();
-            inflater = LayoutInflater.from(context);
-        }
-
-        @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = inflater.inflate(R.layout.nine_gird_view, parent, false);
-            return new MyViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(final MyViewHolder holder, int position) {
-//            Glide.with(getBaseContext()).load(imageList.get(position)).into(holder.image);
-            Glide.with(getBaseContext())
-                    .load(imageList.get(position))
-                    .centerCrop()
-                    .error(R.drawable.no_pictrue)
-                    .crossFade()
-                    .into(new GlideDrawableImageViewTarget(holder.image) {
-                              @Override
-                              public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
-                                  super.onResourceReady(drawable, anim);
-                                  holder.progress.setVisibility(View.GONE);
-                              }
-                          }
-                    );
-        }
-
-
-        @Override
-        public int getItemCount() {
-            return imageList.size()>9? 9 :imageList.size() ;
-        }
-    }
-
-    private class MyViewHolder extends RecyclerView.ViewHolder {
-        public ImageView image;
-        public ProgressBar progress ;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            image = (ImageView) itemView.findViewById(R.id.image);
-            progress = (ProgressBar) itemView.findViewById(R.id.progress);
-        }
     }
 
 }

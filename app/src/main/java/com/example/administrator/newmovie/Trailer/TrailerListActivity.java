@@ -6,11 +6,11 @@ import android.util.Log;
 import android.view.View;
 
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
+import com.example.administrator.newmovie.BaseActivity;
 import com.example.administrator.newmovie.Data.TrailerData;
 import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.R;
 import com.example.administrator.newmovie.CustomView.TitleBar;
-import com.trello.rxlifecycle.components.RxActivity;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-public class TrailerListActivity extends RxActivity {
+public class TrailerListActivity extends BaseActivity {
 
     private int movieId ;
     private String movieName ;

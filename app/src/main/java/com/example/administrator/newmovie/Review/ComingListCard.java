@@ -10,6 +10,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.administrator.newmovie.Data.ComingMovie;
 import com.example.administrator.newmovie.R;
 
@@ -76,7 +79,22 @@ public class ComingListCard extends RelativeLayout {
                     + moviecomingsBean.getRDay() - 36) % 7;
             mComingTimeWeek.setText(getDayOfWeek(week));
         }
-        Glide.with(getContext()).load(moviecomingsBean.getImage()).into(mPoster);
+//        Glide.with(getContext()).load(moviecomingsBean.getImage()).into(mPoster);
+
+        Glide.with(getContext())
+                .load(moviecomingsBean.getImage())
+                .centerCrop()
+                .placeholder(R.drawable.no_pictrue)
+                .error(R.drawable.download_fail_hint)
+                .crossFade()
+                .into(new GlideDrawableImageViewTarget(mPoster) {
+                          @Override
+                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+                              super.onResourceReady(drawable, anim);
+                          }
+                      }
+                );
+
         mComingName.setText(moviecomingsBean.getTitle());
         String wantedcount = String.format("<font color=\"#DA8E6A\">%d</font><font color=\"#6E6E6E\">/%s</font>", moviecomingsBean.getWantedCount(), "人想看");
         mWantedCount.setText(Html.fromHtml(wantedcount));

@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.R;
 import com.example.administrator.newmovie.Data.ShowingMovie;
@@ -95,7 +98,20 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void onBind(Context context, int position, String data) {
-            Glide.with(getContext()).load(data).into(mImageView);
+//            Glide.with(getContext()).load(data).into(mImageView);
+            Glide.with(getContext())
+                    .load(data)
+                    .centerCrop()
+                    .placeholder(R.drawable.no_pictrue)
+                    .error(R.drawable.download_fail_hint)
+                    .crossFade()
+                    .into(new GlideDrawableImageViewTarget(mImageView) {
+                              @Override
+                              public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+                                  super.onResourceReady(drawable, anim);
+                              }
+                          }
+                    );
         }
 
     }

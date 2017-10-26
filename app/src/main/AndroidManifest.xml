@@ -39,8 +39,13 @@
         <activity
             android:name=".Trailer.TrailerListActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
-        <activity android:name=".MovieDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MovieDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".MovieImageAllActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

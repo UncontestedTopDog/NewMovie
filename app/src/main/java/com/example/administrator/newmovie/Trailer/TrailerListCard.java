@@ -7,6 +7,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.administrator.newmovie.Data.TrailerData;
 import com.example.administrator.newmovie.CustomView.MyVideoPlayerStandard;
 import com.example.administrator.newmovie.R;
@@ -60,8 +63,37 @@ public class TrailerListCard extends RelativeLayout {
 
         trailerPlayer.setUp(trailerData.getHightUrl(), JZVideoPlayer.SCREEN_LAYOUT_LIST, "",timelength);
         trailerTitle.setText(trailerData.getTitle());
-        Glide.with(getContext()).load(trailerData.getImage()).into(trailerPlayer.thumbImageView);
+//        Glide.with(getContext()).load(trailerData.getImage()).into(trailerPlayer.thumbImageView);
         Glide.with(getContext()).load(trailerData.getImage()).into(mRoundImageView);
+
+        Glide.with(getContext())
+                .load(trailerData.getImage())
+                .centerCrop()
+                .placeholder(R.drawable.no_pictrue)
+                .error(R.drawable.download_fail_hint)
+                .crossFade()
+                .into(new GlideDrawableImageViewTarget(trailerPlayer.thumbImageView) {
+                          @Override
+                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+                              super.onResourceReady(drawable, anim);
+                          }
+                      }
+                );
+
+//        Glide.with(getContext())
+//                .load(trailerData.getImage())
+//                .centerCrop()
+//                .placeholder(R.drawable.no_pictrue)
+//                .error(R.drawable.download_fail_hint)
+//                .crossFade()
+//                .into(new GlideDrawableImageViewTarget(mRoundImageView) {
+//                          @Override
+//                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+//                              super.onResourceReady(drawable, anim);
+//                          }
+//                      }
+//                );
+
         return true ;
     }
 }
