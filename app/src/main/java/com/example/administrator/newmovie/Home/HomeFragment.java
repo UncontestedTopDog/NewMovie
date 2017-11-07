@@ -15,9 +15,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.example.administrator.newmovie.Data.BannerData;
 import com.example.administrator.newmovie.Data.MovieManager;
 import com.example.administrator.newmovie.R;
 import com.example.administrator.newmovie.Data.ShowingMovie;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 import com.zhouwei.mzbanner.MZBannerView;
 import com.zhouwei.mzbanner.holder.MZHolderCreator;
 import com.zhouwei.mzbanner.holder.MZViewHolder;
@@ -36,14 +39,11 @@ import rx.schedulers.Schedulers;
 
 public class HomeFragment extends Fragment {
 
-    private MZBannerView mMZBanner;
-    private String[] RES = {
-            "https://pic1.zhimg.com/4c88a7da3147a213d76f918188d1b0f4_r.jpg",
-            "https://pic1.zhimg.com/4c88a7da3147a213d76f918188d1b0f4_r.jpg",
-            "https://pic1.zhimg.com/4c88a7da3147a213d76f918188d1b0f4_r.jpg",
-            "https://pic1.zhimg.com/4c88a7da3147a213d76f918188d1b0f4_r.jpg",
-            "https://pic1.zhimg.com/4c88a7da3147a213d76f918188d1b0f4_r.jpg",
-            "https://pic1.zhimg.com/4c88a7da3147a213d76f918188d1b0f4_r.jpg"};
+    private static final String TAG = "HomeFragment";
+    private List<BannerData> bannerDatas = new ArrayList<>();
+    private List<String> bannerImgs = new ArrayList<>();
+    private List<String> bannerTitles = new ArrayList<>();
+    private Banner mBanner;
     private MovieBrierfCard mMovieBrierfCard;
 
 
@@ -58,61 +58,13 @@ public class HomeFragment extends Fragment {
 
     private void initView(View view) {
 
-        mMZBanner = (MZBannerView) view.findViewById(R.id.banner);
-//         设置页面点击事件
-        mMZBanner.setBannerPageClickListener(new MZBannerView.BannerPageClickListener() {
-            @Override
-            public void onPageClick(View view, int position) {
-                Toast.makeText(getContext(), "click page:" + position, Toast.LENGTH_LONG).show();
-            }
-        });
-
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < RES.length; i++) {
-            list.add(RES[i]);
-        }
-        // 设置数据
-        mMZBanner.setPages(list, new MZHolderCreator<BannerViewHolder>() {
-            @Override
-            public BannerViewHolder createViewHolder() {
-                return new BannerViewHolder();
-            }
-        });
+        mBanner = (Banner) view.findViewById(R.id.banner);
+        //设置图片加载器
+        mBanner.setImageLoader(new GlideImageLoader());
 
         mMovieBrierfCard = (MovieBrierfCard) view.findViewById(R.id.showing_movice);
         getShowingMovieByLocationId(290);
-
-
-    }
-
-    public class BannerViewHolder implements MZViewHolder<String> {
-        private ImageView mImageView;
-
-        @Override
-        public View createView(Context context) {
-            // 返回页面布局文件
-            View view = LayoutInflater.from(context).inflate(R.layout.banner_item, null);
-            mImageView = (ImageView) view.findViewById(R.id.banner_image);
-            return view;
-        }
-
-        @Override
-        public void onBind(Context context, int position, String data) {
-//            Glide.with(getContext()).load(data).into(mImageView);
-            Glide.with(getContext())
-                    .load(data)
-                    .centerCrop()
-                    .placeholder(R.drawable.no_pictrue)
-                    .error(R.drawable.download_fail_hint)
-                    .crossFade()
-                    .into(new GlideDrawableImageViewTarget(mImageView) {
-                              @Override
-                              public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
-                                  super.onResourceReady(drawable, anim);
-                              }
-                          }
-                    );
-        }
+        getBanaerDataById("1f803d875863");
 
     }
 
@@ -134,4 +86,59 @@ public class HomeFragment extends Fragment {
                     }
                 });
     }
+
+    private void getBanaerDataById(final String Id) {
+        MovieManager.INSTANCE()
+                .getBanaerDataById(Id)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String result) {
+                        String s = "<div data-note-content class=\"show-content\">";
+                        int i = result.indexOf(s);
+                        result = result.substring(i+s.length(),result.length());
+                        String mark = "哈哈哈";
+                        i = 0;
+                        int j = 0;
+                        String title = "";
+                        String img = "";
+                        String link = "";
+                        while (j < 5) {
+                            i = result.indexOf(mark);
+                            result = result.substring(i + mark.length(), result.length());
+                            i = result.indexOf(mark);
+                            title = result.substring(0, i);
+                            result = result.substring(i + mark.length(), result.length());
+                            i = result.indexOf(mark);
+                            img = result.substring(0, i);
+                            img = "http://" + img;
+                            img = img.replaceAll("#", ".");
+                            result = result.substring(i + mark.length(), result.length());
+                            i = result.indexOf(mark);
+                            link = result.substring(0, i);
+                            link = link.replace("<br>","");
+                            link = "http://" + link;
+                            link = link.replaceAll("#", ".");
+                            BannerData bannerData = new BannerData(title, img, link);
+                            bannerDatas.add(bannerData);
+                            bannerImgs.add(img);
+                            bannerTitles.add(title);
+                            j++;
+                        }
+                        //设置图片集合
+                        mBanner.setImages(bannerImgs);
+                        mBanner.setBannerTitles(bannerTitles);
+                        mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+                        //banner设置方法全部调用完毕时最后调用
+                        mBanner.start();
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        Log.e(TAG, throwable.toString());
+                    }
+                });
+    }
+
 }

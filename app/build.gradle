@@ -59,4 +59,5 @@ dependencies {
     compile 'cn.jzvd:jiaozivideoplayer:6.0.2'
     compile 'com.github.pinguo-zhouwei:MZBannerView:v2.0.0'
     compile 'com.gyf.barlibrary:barlibrary:2.3.0'
+    compile 'com.youth.banner:banner:1.4.10'
 }

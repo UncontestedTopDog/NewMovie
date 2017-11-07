@@ -39,6 +39,8 @@ public class MyVideoPlayerStandard extends JZVideoPlayerStandard {
     @Override
     public void setUp(String url, int screen, Object... objects) {
         super.setUp(url, screen, objects);
+        if (objects[1].toString().equals("0"))
+            timeLength.setVisibility(INVISIBLE);
         timeLength.setText(objects[1].toString());
     }
 

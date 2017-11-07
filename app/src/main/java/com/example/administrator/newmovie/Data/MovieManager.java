@@ -65,4 +65,8 @@ public class MovieManager {
         return timeMovieId;
     }
 
+    public Observable<String> getBanaerDataById(@NonNull String Id) {
+        return MovieService.getBanaerDataById(Id);
+    }
+
 }

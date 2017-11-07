@@ -25,7 +25,6 @@ import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.widget.ImageView;
 
-
 public class PhotoView extends ImageView implements IPhotoView {
 
     private PhotoViewAttacher mAttacher;

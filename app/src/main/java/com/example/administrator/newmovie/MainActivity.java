@@ -57,19 +57,12 @@ public class MainActivity extends BaseActivity {
     private static TextView mReviewTab;
     private static TextView mHomeWorkTab;
     private static TextView mMeTab;
-    private static int mCurrTab = HOME_PAGE_TAB;
-    private static RelativeLayout mNetErrorNoticeBar;
-    static View fakeStatus;
-    private NetworkHelper.NetworkClass netMobile;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mNetErrorNoticeBar = (RelativeLayout) findViewById(R.id.net_error_notice_bar);
-
-        fakeStatus = findViewById(R.id.fake_status_bar);
         mHomePageTab = (TextView) findViewById(R.id.home_textview);
         mReviewTab = (TextView) findViewById(R.id.review_textview);
         mHomeWorkTab = (TextView) findViewById(R.id.homework_textview);
@@ -151,77 +144,14 @@ public class MainActivity extends BaseActivity {
         });
         changeIndicatorByIndex(0);
         mFragmentManager = getSupportFragmentManager();
-        updateNetErrorNoticeBar();
     }
 
-
-    private void updateNetErrorNoticeBar() {
-        mNetErrorNoticeBar.setVisibility(NetworkHelper.isDisconnected(MainActivity.this) ? View.VISIBLE : View.GONE);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            if (mNetErrorNoticeBar.getVisibility() == View.VISIBLE) {
-                fakeStatus.setVisibility(View.VISIBLE);
-            } else {
-                if (mHomePageTab.isSelected()) {
-                    fakeStatus.setVisibility(View.GONE);
-                }
-                if (mMeTab.isSelected()) {
-                    fakeStatus.setVisibility(View.GONE);
-                }
-            }
-        }
-    }
 
     private static void changeIndicatorByIndex(int index) {
         mHomePageTab.setSelected(index == HOME_PAGE_TAB);
         mMeTab.setSelected(index == ME_TAB);
         mReviewTab.setSelected(index == REVIEW_TAB);
         mHomeWorkTab.setSelected(index == HOME_WORK);
-
-
-        switch (index) {
-            case HOME_PAGE_TAB:
-                mCurrTab = HOME_PAGE_TAB;
-                fakeStatus.setVisibility(View.GONE);
-                MovieManager.INSTANCE().getTimeMovieIdByMovieNameAndTime("天才枪手",TimeUtil.getCurrentTime())
-                        .subscribeOn(Schedulers.newThread())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Action1<String>() {
-                            @Override
-                            public void call(String result) {
-                                TimeMovieId timeMovieId = MovieManager.INSTANCE().handTimeMovieIdInitialData(result);
-                            }
-                        }, new Action1<Throwable>() {
-                            @Override
-                            public void call(Throwable throwable) {
-                                Log.i("TCQS",throwable.toString());
-                            }
-                        });
-                break;
-            case REVIEW_TAB:
-                mCurrTab = REVIEW_TAB;
-                fakeStatus.setVisibility(View.VISIBLE);
-                break;
-            case HOME_WORK:
-                fakeStatus.setVisibility(View.VISIBLE);
-                break;
-            case ME_TAB:
-                mCurrTab = ME_TAB;
-                if (mNetErrorNoticeBar.getVisibility() == View.VISIBLE) {
-                    fakeStatus.setVisibility(View.VISIBLE);
-                } else {
-                    fakeStatus.setVisibility(View.GONE);
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
-    @Override
-    public void onNetChange(NetworkHelper.NetworkClass netMobile) {
-        super.onNetChange(netMobile);
-        updateNetErrorNoticeBar();
     }
 
     public static void switchToView(int index) {

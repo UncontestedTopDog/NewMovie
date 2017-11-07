@@ -35,6 +35,7 @@ public class MovieCard extends RelativeLayout {
     private TextView name;
     private LinearLayout mainLayout ;
     private int movieId;
+    private String movieName;
 
     public MovieCard(Context context) {
         super(context);
@@ -63,6 +64,7 @@ public class MovieCard extends RelativeLayout {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), MovieDetailActivity.class);
                 intent.putExtra("MOVIEID",movieId);
+                intent.putExtra("MOVIENAME",movieName);
                 getContext().startActivity(intent);
             }
         });
@@ -81,6 +83,7 @@ public class MovieCard extends RelativeLayout {
         });
 
         movieId = showingMovie.getId();
+        movieName = showingMovie.getT();
 
 //        Glide.with(getContext()).load(showingMovie.getImg()).into(poster);
 

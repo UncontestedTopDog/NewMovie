@@ -1,6 +1,7 @@
 package com.example.administrator.newmovie.StagePhoto;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
@@ -25,7 +26,10 @@ import com.example.administrator.newmovie.Data.MovieImageAll;
 import com.example.administrator.newmovie.Data.ShowingMovie;
 import com.example.administrator.newmovie.Home.MovieCard;
 import com.example.administrator.newmovie.MovieDetailActivity;
+import com.example.administrator.newmovie.MovieImageAllActivity;
+import com.example.administrator.newmovie.MovieImageDetailActivity;
 import com.example.administrator.newmovie.R;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -151,7 +155,7 @@ public class StagePhotoRecyclerView extends BaseRecyclerView {
         }
 
         @Override
-        public void onBindViewHolder(final StagePhotoViewHolder holder, int position) {
+        public void onBindViewHolder(final StagePhotoViewHolder holder, final int position) {
             Glide.with(getContext())
                     .load(imageList.get(position))
                     .centerCrop()
@@ -165,6 +169,18 @@ public class StagePhotoRecyclerView extends BaseRecyclerView {
                               }
                           }
                     );
+            holder.itemView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(getContext(), MovieImageDetailActivity.class);
+
+                    intent.putStringArrayListExtra("imageList", (ArrayList<String>) imageList);
+                    intent.putExtra("CURRENT", position);
+
+                    getContext().startActivity(intent);
+                }
+            });
         }
 
         @Override

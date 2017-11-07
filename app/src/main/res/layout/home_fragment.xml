@@ -5,21 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/banner_background"
-        android:scaleType="fitXY"
-        android:src="@drawable/banner_background"
-        android:layout_width="match_parent"
-        android:layout_height="200dp" />
-
-    <com.zhouwei.mzbanner.MZBannerView
+    <com.youth.banner.Banner
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:open_mz_mode="true"
-        app:canLoop="true"
-        app:indicatorAlign="center"
-        app:indicatorPaddingLeft="10dp" />
+        android:layout_height="200dp" />
 
     <com.example.administrator.newmovie.Home.MovieBrierfCard
         android:id="@+id/showing_movice"

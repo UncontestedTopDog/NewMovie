@@ -26,16 +26,20 @@ import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
 import com.example.administrator.newmovie.CustomView.GradeProgress;
 import com.example.administrator.newmovie.CustomView.LoadingView;
+import com.example.administrator.newmovie.CustomView.MyVideoPlayerStandard;
 import com.example.administrator.newmovie.CustomView.RoundImageView;
 import com.example.administrator.newmovie.Data.MovieDetail;
 import com.example.administrator.newmovie.Data.MovieImageAll;
 import com.example.administrator.newmovie.Data.MovieManager;
+import com.example.administrator.newmovie.Data.TrailerData;
 import com.example.administrator.newmovie.DirectorAndActors.DirectorAndActorBrierfCard;
 import com.example.administrator.newmovie.StagePhoto.StagePhotoBrierfCard;
+import com.example.administrator.newmovie.Trailer.TrailerListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.jzvd.JZVideoPlayer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -50,7 +54,7 @@ public class MovieDetailActivity extends BaseActivity {
     private TextView style;
     private TextView lengthFilm;
     private TextView releaseTime;
-    private RoundImageView poster;
+    private ImageView poster;
     private TextView mGut;
     private ImageView mPull;
     private boolean b = true;
@@ -58,8 +62,11 @@ public class MovieDetailActivity extends BaseActivity {
     private DirectorAndActorBrierfCard directorAndActorBrierfCard ;
     private FireworkyPullToRefreshLayout mFireworkyPullToRefreshLayout;
     private int movieId ;
-    private List<String> imageList = new ArrayList<>();
+    private String movieName ;
     private StagePhotoBrierfCard stagePhotoBrierfCard ;
+    private TextView trailerAll ;
+    private MyVideoPlayerStandard trailerPlayer ;
+    private BoxOfficeCard boxOfficeCard ;
 
 
     @Override
@@ -68,6 +75,7 @@ public class MovieDetailActivity extends BaseActivity {
         setContentView(R.layout.activity_movie_detail);
         Intent intent = getIntent();
         movieId = intent.getIntExtra("MOVIEID",224428);
+        movieName = intent.getStringExtra("MOVIENAME");
         mGradeProgress = (GradeProgress) findViewById(R.id.seek_bar);
         mGut = (TextView) findViewById(R.id.gut);
         mPull = (ImageView) findViewById(R.id.pull);
@@ -77,11 +85,14 @@ public class MovieDetailActivity extends BaseActivity {
         style = (TextView) findViewById(R.id.style);
         lengthFilm = (TextView) findViewById(R.id.length_film);
         releaseTime = (TextView) findViewById(R.id.release_time);
-        poster = (RoundImageView) findViewById(R.id.poster);
-        loadingView = (LoadingView) findViewById(R.id.loading);
+        poster = (ImageView) findViewById(R.id.poster);
+        loadingView = (LoadingView) findViewById(R.id.loading_view);
         stagePhotoBrierfCard = (StagePhotoBrierfCard) findViewById(R.id.stage_photo_brierf_card);
         directorAndActorBrierfCard = (DirectorAndActorBrierfCard) findViewById(R.id.director_and_actor_brierf_card);
         mFireworkyPullToRefreshLayout = (FireworkyPullToRefreshLayout) findViewById(R.id.fireworkypulltorefreshlayout);
+        trailerAll = (TextView) findViewById(R.id.trailer_all);
+        trailerPlayer = (MyVideoPlayerStandard) findViewById(R.id.trailer_player);
+        boxOfficeCard = (BoxOfficeCard) findViewById(R.id.box_office_card);
         mFireworkyPullToRefreshLayout.setOnRefreshListener(new FireworkyPullToRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -89,6 +100,7 @@ public class MovieDetailActivity extends BaseActivity {
             }
         });
         getMovieImageAllByMovieId(movieId);
+        getTrailerByLocationIdAndMovieId(1, movieId);
 
         mPull.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +113,16 @@ public class MovieDetailActivity extends BaseActivity {
                     mGut.setLines(2);
                 }
                 b = !b;
+            }
+        });
+
+        trailerAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MovieDetailActivity.this,TrailerListActivity.class);
+                intent.putExtra("MOVIENAME",movieName);
+                intent.putExtra("MOVIEID",movieId);
+                startActivity(intent);
             }
         });
     }
@@ -132,6 +154,7 @@ public class MovieDetailActivity extends BaseActivity {
                     @Override
                     public void call(MovieDetail movieDetail) {
                         bindData(movieDetail);
+                        boxOfficeCard.bindData(movieDetail.getData().getBoxOffice());
                         mFireworkyPullToRefreshLayout.setRefreshing(false);
                     }
                 }, new Action1<Throwable>() {
@@ -189,23 +212,66 @@ public class MovieDetailActivity extends BaseActivity {
         sb = sb.insert(4, "-");
         s = sb.toString() + movieDetail.getData().getBasic().getReleaseArea();
         releaseTime.setText(s);
-        Glide.with(this).load(movieDetail.getData().getBasic().getImg()).into(poster);
-//        Glide.with(this)
-//                .load(movieDetail.getData().getBasic().getImg())
-//                .centerCrop()
-//                .placeholder(R.drawable.no_pictrue)
-//                .error(R.drawable.download_fail_hint)
-//                .crossFade()
-//                .into(new GlideDrawableImageViewTarget(poster) {
-//                          @Override
-//                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
-//                              super.onResourceReady(drawable, anim);
-//                          }
-//                      }
-//                );
-
+        Glide.with(this)
+                .load(movieDetail.getData().getBasic().getImg())
+                .centerCrop()
+                .placeholder(R.drawable.no_pictrue)
+                .error(R.drawable.download_fail_hint)
+                .crossFade()
+                .into(new GlideDrawableImageViewTarget(poster) {
+                          @Override
+                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+                              super.onResourceReady(drawable, anim);
+                          }
+                      }
+                );
         loadingView.setVisibility(View.GONE);
         directorAndActorBrierfCard.bindData(movieDetail.getData().getBasic().getActors(),movieDetail.getData().getBasic().getDirector());
     }
 
+    private void getTrailerByLocationIdAndMovieId(int pageindex , final int movieid) {
+        MovieManager.INSTANCE()
+                .getTrailerByPageIndexAndMovieId(pageindex,movieid)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<TrailerData>() {
+                    @Override
+                    public void call(TrailerData trailerData) {
+                        trailerPlayer.setUp(trailerData.getVideoList().get(0).getHightUrl(), JZVideoPlayer.SCREEN_LAYOUT_LIST, "",0);
+                        Glide.with(MovieDetailActivity.this)
+                                .load(trailerData.getVideoList().get(0).getImage())
+                                .centerCrop()
+                                .placeholder(R.drawable.no_pictrue)
+                                .error(R.drawable.download_fail_hint)
+                                .crossFade()
+                                .into(new GlideDrawableImageViewTarget(trailerPlayer.thumbImageView) {
+                                          @Override
+                                          public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+                                              super.onResourceReady(drawable, anim);
+                                          }
+                                      }
+                                );
+                        mFireworkyPullToRefreshLayout.setRefreshing(false);
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        getTrailerByLocationIdAndMovieId(1,movieid);
+                        Log.e("MAIN",throwable.toString());
+                    }
+                });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (JZVideoPlayer.backPress()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JZVideoPlayer.releaseAllVideos();
+    }
 }

@@ -11,6 +11,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -139,6 +140,17 @@ public class MovieService {
         return retrofit.create(IService.class).getMovieImageAllByMovieId(movieId);
     }
 
+    public static Observable<String> getBanaerDataById(String id){
+        String URL = "http://www.jianshu.com/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(new ToStringConverterFactory())
+                .build();
+
+        return retrofit.create(IService.class).getBanaerDataById(id);
+    }
+
     private interface IService {
         @GET("LocationMovies.api")
         Observable<ShowingMovie> getShowingMovieByLocationId(
@@ -190,6 +202,9 @@ public class MovieService {
         Observable<MovieImageAll> getMovieImageAllByMovieId(
                 @Query("movieId") int movieId
         );
+
+        @GET("p/{id}")
+        Observable<String> getBanaerDataById(@Path("id") String Id);
     }
 
 }

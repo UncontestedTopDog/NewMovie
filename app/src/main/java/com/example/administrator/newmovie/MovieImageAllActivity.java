@@ -34,16 +34,8 @@ public class MovieImageAllActivity extends BaseActivity {
     private TabLayout.Tab work;
     private TabLayout.Tab news;
     private TabLayout.Tab envelopell;
-    private MovieImageAll movieImageAll ;
+    public static MovieImageAll movieImageAll ;
     private TitleBar mTitleBar ;
-
-    public MovieImageAll getMovieImageAll() {
-        return movieImageAll;
-    }
-
-    public void setMovieImageAll(MovieImageAll movieImageAll) {
-        this.movieImageAll = movieImageAll;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

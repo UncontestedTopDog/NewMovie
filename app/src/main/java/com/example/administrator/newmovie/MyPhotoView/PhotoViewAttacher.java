@@ -120,7 +120,7 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
 
     // Gesture Detectors
     private GestureDetector mGestureDetector;
-    private com.example.administrator.newmovie.MyPhotoView.GestureDetector mScaleDragDetector ;
+    private com.example.administrator.newmovie.MyPhotoView.GestureDetector mScaleDragDetector;
 
     // These are set so we don't keep allocating them on the heap
     private final Matrix mBaseMatrix = new Matrix();
