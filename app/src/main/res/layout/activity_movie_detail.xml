@@ -114,9 +114,9 @@
                     <RelativeLayout
                         android:layout_width="134dp"
                         android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
-                        android:layout_alignParentTop="true">
+                        android:layout_alignParentEnd="true">
 
                         <ImageView
                             android:id="@+id/poster"
@@ -134,6 +134,18 @@
                             android:layout_margin="9dp"
                             android:scaleType="fitXY"
                             android:src="@drawable/poster_frame" />
+                        <com.example.administrator.newmovie.CustomView.ScoreView
+                            android:id="@+id/s1"
+                            android:layout_margin="5dp"
+                            android:layout_alignTop="@+id/poster"
+                            android:layout_alignRight="@+id/poster"
+                            android:layout_alignEnd="@+id/poster"
+                            android:layout_width="31.7dp"
+                            android:layout_height="25dp" />
+                        <!--<com.example.administrator.newmovie.CustomView.ScoreView-->
+                            <!--android:layout_toRightOf="@+id/s1"-->
+                            <!--android:layout_width="12.7dp"-->
+                            <!--android:layout_height="16.7dp" />-->
 
                     </RelativeLayout>
 
@@ -317,6 +329,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
 </RelativeLayout>
