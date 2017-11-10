@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="main_bottom_text">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:drawablePadding">-10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/tab_txt_color_selector</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
 </resources>

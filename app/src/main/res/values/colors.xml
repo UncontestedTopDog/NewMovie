@@ -111,5 +111,7 @@
     <color name="poster_bg" >#64b7b4b4</color>
     <color name="grade_progress_bg">#E1E9F2</color>
     <color name="app_mian_color">#192533</color>
+    <color name="tab_txt_selected">#ff8c0e</color>
+    <color name="tab_txt_normal">#666666</color>
 
 </resources>

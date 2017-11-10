@@ -56,17 +56,17 @@ public class MainActivity extends BaseActivity {
     private static TextView mHomePageTab;
     private static TextView mReviewTab;
     private static TextView mHomeWorkTab;
-    private static TextView mMeTab;
+    private static RelativeLayout mMeTab;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mHomePageTab = (TextView) findViewById(R.id.home_textview);
-        mReviewTab = (TextView) findViewById(R.id.review_textview);
-        mHomeWorkTab = (TextView) findViewById(R.id.homework_textview);
-        mMeTab = (TextView) findViewById(R.id.me_textview);
+        mHomePageTab = (TextView) findViewById(R.id.home_fragment);
+        mReviewTab = (TextView) findViewById(R.id.review_fragment);
+        mHomeWorkTab = (TextView) findViewById(R.id.homewoek_fragment);
+        mMeTab = (RelativeLayout) findViewById(R.id.me_fragment);
         mHomePageTab.setOnClickListener(mTabOnClickListener);
         mReviewTab.setOnClickListener(mTabOnClickListener);
         mHomeWorkTab.setOnClickListener(mTabOnClickListener);

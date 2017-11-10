@@ -88,6 +88,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void getBanaerDataById(final String Id) {
+        bannerImgs.clear();
+        bannerTitles.clear();
+        bannerDatas.clear();
         MovieManager.INSTANCE()
                 .getBanaerDataById(Id)
                 .subscribeOn(Schedulers.newThread())

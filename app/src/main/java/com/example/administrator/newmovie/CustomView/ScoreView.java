@@ -55,6 +55,7 @@ public class ScoreView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.drawColor(Color.GREEN);
         Bitmap source = BitmapFactory.decodeResource(getResources(), R.drawable.android_font);
         Bitmap bitmap = Bitmap.createBitmap(source, 7 * source.getWidth() / 10, 0, source.getWidth() / 10, source.getHeight());
         bitmap = Bitmap.createScaledBitmap(bitmap, firstSize, firstSize*bitmap.getHeight()/bitmap.getWidth(), false);

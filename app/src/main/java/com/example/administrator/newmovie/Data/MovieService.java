@@ -1,10 +1,5 @@
 package com.example.administrator.newmovie.Data;
 
-import com.example.administrator.newmovie.Data.ComingMovie;
-import com.example.administrator.newmovie.Data.MovieDetail;
-import com.example.administrator.newmovie.Data.ShowingMovie;
-import com.example.administrator.newmovie.Data.TrailerData;
-
 import java.util.List;
 
 import retrofit2.Retrofit;
@@ -66,6 +61,18 @@ public class MovieService {
                 .build();
 
         return retrofit.create(IService.class).getDetailByLocationIdAndMovieId(locationId,movieId);
+    }
+
+    public static Observable<MovieAward> getAwardByLocationIdAndMovieId(int locationId, int movieId) {
+
+        String URL = "https://api-m.mtime.cn/movie/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(IService.class).getAwardByLocationIdAndMovieId(locationId,movieId);
     }
 
     public static Observable<List<DoubanMovieId>> getDoubanMovieIdByMovieName(String movieName) {
@@ -170,6 +177,13 @@ public class MovieService {
 
         @GET("detail.api")
         Observable<MovieDetail> getDetailByLocationIdAndMovieId(
+                @Query("locationId") int locationId,
+                @Query("movieId") int movieId
+        );
+
+
+        @GET("detail.api")
+        Observable<MovieAward> getAwardByLocationIdAndMovieId(
                 @Query("locationId") int locationId,
                 @Query("movieId") int movieId
         );

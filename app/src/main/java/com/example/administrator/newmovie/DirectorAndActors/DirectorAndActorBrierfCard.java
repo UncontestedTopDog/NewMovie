@@ -2,15 +2,9 @@ package com.example.administrator.newmovie.DirectorAndActors;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.example.administrator.newmovie.Data.MovieDetail;
-import com.example.administrator.newmovie.Data.ShowingMovie;
-import com.example.administrator.newmovie.Home.MovieRecyclerView;
-import com.example.administrator.newmovie.MainActivity;
 import com.example.administrator.newmovie.R;
 
 import java.util.List;

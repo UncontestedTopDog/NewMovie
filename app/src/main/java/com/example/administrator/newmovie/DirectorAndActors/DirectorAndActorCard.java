@@ -65,6 +65,7 @@ public class DirectorAndActorCard extends LinearLayout {
         nameen.setText(directorBean.getNameEn());
         rolename.setText("导演");
     }
+
     public void bindData(MovieDetail.DataBean.BasicBean.ActorsBean actorsBean) {
 //        Glide.with(getContext()).load(actorsBean.getImg()).into(img);
         Glide.with(getContext())
