@@ -7,12 +7,13 @@ import android.support.v4.app.FragmentActivity;
 import com.example.administrator.newmovie.NetWork.NetChange;
 import com.example.administrator.newmovie.NetWork.NetworkHelper;
 import com.gyf.barlibrary.ImmersionBar;
+import com.trello.rxlifecycle.components.support.RxFragmentActivity;
 
 /**
  * Created by Administrator on 2017/9/14.
  */
 
-public class BaseActivity extends FragmentActivity implements NetChange {
+public class BaseActivity extends RxFragmentActivity implements NetChange {
 
     public static NetChange netChange;
     private ImmersionBar mImmersionBar;

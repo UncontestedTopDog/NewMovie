@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/award_img"
+        android:layout_margin="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <LinearLayout
+        android:id="@+id/award_layout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@+id/award_img">
+        <TextView
+            android:id="@+id/win_award"
+            android:text="获奖次数:5"
+            android:gravity="center"
+            android:drawableLeft="@drawable/win"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <TextView
+            android:id="@+id/nomination_award"
+            android:text="提名次数:15"
+            android:gravity="center"
+            android:drawableLeft="@drawable/nomination"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+    </LinearLayout>
+
+    <com.example.administrator.newmovie.Aware.AwardDeatilRecyclerView
+        android:visibility="gone"
+        android:id="@+id/award_detail"
+        android:layout_toRightOf="@+id/award_img"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.example.administrator.newmovie.Aware.AwardDeatilRecyclerView>
+
+</RelativeLayout>

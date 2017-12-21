@@ -16,10 +16,9 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
+import com.example.administrator.newmovie.Aware.AwardActivity;
 import com.example.administrator.newmovie.CustomView.GradeProgress;
 import com.example.administrator.newmovie.CustomView.LoadingView;
-import com.example.administrator.newmovie.CustomView.MyVideoPlayerStandard;
-import com.example.administrator.newmovie.Data.MovieAward;
 import com.example.administrator.newmovie.Data.MovieDetail;
 import com.example.administrator.newmovie.Data.MovieImageAll;
 import com.example.administrator.newmovie.Data.MovieManager;
@@ -54,11 +53,12 @@ public class MovieDetailActivity extends BaseActivity {
     private String movieName ;
     private StagePhotoBrierfCard stagePhotoBrierfCard ;
     private TextView trailerAll ;
-    private MyVideoPlayerStandard trailerPlayer ;
+    private NewJZVideoPlayerStandard trailerPlayer ;
     private BoxOfficeCard boxOfficeCard ;
     private LinearLayout awardLayout ;
     private TextView winAward ;
     private TextView nominationAward ;
+    private TextView scoreView ;
 
 
     @Override
@@ -67,6 +67,7 @@ public class MovieDetailActivity extends BaseActivity {
         setContentView(R.layout.activity_movie_detail);
         Intent intent = getIntent();
         movieId = intent.getIntExtra("MOVIEID",224428);
+//        movieId = 12135 ;
         movieName = intent.getStringExtra("MOVIENAME");
         findViewById();
 
@@ -77,7 +78,8 @@ public class MovieDetailActivity extends BaseActivity {
             }
         });
         getMovieImageAllByMovieId(movieId);
-        getTrailerByLocationIdAndMovieId(1, movieId);
+
+
 
         mPull.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +104,16 @@ public class MovieDetailActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+        awardLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MovieDetailActivity.this,AwardActivity.class);
+                intent1.putExtra("MOVIEID",movieId);
+                startActivity(intent1);
+            }
+        });
+
     }
 
     private void findViewById() {
@@ -120,11 +132,12 @@ public class MovieDetailActivity extends BaseActivity {
         directorAndActorBrierfCard = (DirectorAndActorBrierfCard) findViewById(R.id.director_and_actor_brierf_card);
         mFireworkyPullToRefreshLayout = (FireworkyPullToRefreshLayout) findViewById(R.id.fireworkypulltorefreshlayout);
         trailerAll = (TextView) findViewById(R.id.trailer_all);
-        trailerPlayer = (MyVideoPlayerStandard) findViewById(R.id.trailer_player);
+        trailerPlayer = (NewJZVideoPlayerStandard) findViewById(R.id.trailer_player);
         boxOfficeCard = (BoxOfficeCard) findViewById(R.id.box_office_card);
         awardLayout = (LinearLayout) findViewById(R.id.award_layout);
         winAward = (TextView) findViewById(R.id.win_award);
         nominationAward = (TextView) findViewById(R.id.nomination_award);
+        scoreView = (TextView) findViewById(R.id.s1);
     }
 
     public void startShowAnim(View v) {
@@ -155,49 +168,18 @@ public class MovieDetailActivity extends BaseActivity {
                     public void call(MovieDetail movieDetail) {
                         bindData(movieDetail);
                         boxOfficeCard.bindData(movieDetail.getData().getBoxOffice());
-                        getAwardByLocationIdAndMovieId(290,movieId);
-                        mFireworkyPullToRefreshLayout.setRefreshing(false);
+                        bindAwardData(movieDetail.getData().getBasic().getAward());
+                        getTrailerByLocationIdAndMovieId(1, movieId);
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        getDetailByLocationIdAndMovieId(290, movieId);
-                        Log.e("MAIN", throwable.toString());
+                        Log.e(TAG,"2"+ throwable.toString());
                     }
                 });
     }
 
-    private void getAwardByLocationIdAndMovieId(int locationId, final int movieId) {
-        MovieManager.INSTANCE()
-                .getAwardByLocationIdAndMovieId(locationId, movieId)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<MovieAward>() {
-                    @Override
-                    public void call(MovieAward movieAward) {
-                        bindAwardData(movieAward);
-                        for (MovieAward.AwardsBean awardsBean :movieAward.getAwards()){
-                            Log.i(TAG,"FestivalId"+awardsBean.getFestivalId());
-                            for (MovieAward.AwardsBean.WinAwardsBean winAwardsBean : awardsBean.getWinAwards())
-                                Log.i(TAG,winAwardsBean.getAwardName()+"   "+winAwardsBean.getFestivalEventYear());
-                            Log.i(TAG," ");
-                            for (MovieAward.AwardsBean.NominateAwardsBean nominateAwardsBean : awardsBean.getNominateAwards())
-                                Log.i(TAG,nominateAwardsBean.getAwardName()+"   "+nominateAwardsBean.getFestivalEventYear());
-                            Log.i(TAG,"WinCount"+awardsBean.getWinCount());
-                            Log.i(TAG,"NominateCount"+awardsBean.getNominateCount());
-                        }
-
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
-                        getAwardByLocationIdAndMovieId(290, movieId);
-                        Log.e("MAIN", throwable.toString());
-                    }
-                });
-    }
-
-    private void bindAwardData(MovieAward movieAward) {
+    private void bindAwardData(MovieDetail.DataBean.BasicBean.AwardBean movieAward) {
         if (movieAward.getTotalNominateAward() ==0 && movieAward.getTotalWinAward() == 0 ){
             awardLayout.setVisibility(View.GONE);
             loadingView.setVisibility(View.GONE);
@@ -223,8 +205,7 @@ public class MovieDetailActivity extends BaseActivity {
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        getMovieImageAllByMovieId(movieId);
-                        Log.e("MAIN", throwable.toString());
+                        Log.e(TAG, "1"+throwable.toString());
                     }
                 });
     }
@@ -232,6 +213,7 @@ public class MovieDetailActivity extends BaseActivity {
     private void bindData(MovieDetail movieDetail) {
         mGradeProgress.setProgress((int) (movieDetail.getData().getBasic().getOverallRating() * 10));
         mGradeProgress.showGrade();
+        scoreView.setText(movieDetail.getData().getBasic().getOverallRating()+"");
         mGut.setText("剧情：" + movieDetail.getData().getBasic().getStory());
         movieChineseName.setText(movieDetail.getData().getBasic().getName());
         movieForeignName.setText(movieDetail.getData().getBasic().getNameEn());
@@ -241,8 +223,6 @@ public class MovieDetailActivity extends BaseActivity {
         if (movieDetail.getData().getBasic().isIsDMAX() || movieDetail.getData().getBasic().isIsIMAX())
             s += "IMAX";
         label.setText(s);
-//        if (s.length()<3)
-//            label.setBackgroundColor(Color.TRANSPARENT);
         s = "";
         for (String s1 : movieDetail.getData().getBasic().getType())
             s += s1 + "/";
@@ -280,7 +260,7 @@ public class MovieDetailActivity extends BaseActivity {
                 .subscribe(new Action1<TrailerData>() {
                     @Override
                     public void call(TrailerData trailerData) {
-                        trailerPlayer.setUp(trailerData.getVideoList().get(0).getHightUrl(), JZVideoPlayer.SCREEN_LAYOUT_LIST, "",0);
+                        trailerPlayer.setUp(trailerData.getVideoList().get(0).getHightUrl(), JZVideoPlayer.SCREEN_WINDOW_NORMAL, "");
                         Glide.with(MovieDetailActivity.this)
                                 .load(trailerData.getVideoList().get(0).getImage())
                                 .centerCrop()
@@ -300,7 +280,7 @@ public class MovieDetailActivity extends BaseActivity {
                     @Override
                     public void call(Throwable throwable) {
                         getTrailerByLocationIdAndMovieId(1,movieid);
-                        Log.e("MAIN",throwable.toString());
+                        Log.e(TAG,throwable.toString());
                     }
                 });
     }

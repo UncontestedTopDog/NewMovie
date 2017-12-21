@@ -5,9 +5,6 @@ import java.util.List;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -24,7 +21,7 @@ public class MovieService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(IService.class).getShowingMovieByLocationId(locationid);
+        return retrofit.create(IMovieService.class).getShowingMovieByLocationId(locationid);
     }
 
     public static Observable<ComingMovie> getComingMovieByLocationId(final int locationid) {
@@ -36,7 +33,7 @@ public class MovieService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(IService.class).getComingMovieByLocationId(locationid);
+        return retrofit.create(IMovieService.class).getComingMovieByLocationId(locationid);
     }
 
     public static Observable<TrailerData> getTrailerByPageIndexAndMovieId(int pageindex, int movieid) {
@@ -48,7 +45,7 @@ public class MovieService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(IService.class).getTrailerByPageIndexAndMovieId(pageindex,movieid);
+        return retrofit.create(IMovieService.class).getTrailerByPageIndexAndMovieId(pageindex,movieid);
     }
 
     public static Observable<MovieDetail> getDetailByLocationIdAndMovieId(int locationId, int movieId) {
@@ -60,7 +57,7 @@ public class MovieService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(IService.class).getDetailByLocationIdAndMovieId(locationId,movieId);
+        return retrofit.create(IMovieService.class).getDetailByLocationIdAndMovieId(locationId,movieId);
     }
 
     public static Observable<MovieAward> getAwardByLocationIdAndMovieId(int locationId, int movieId) {
@@ -72,7 +69,7 @@ public class MovieService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(IService.class).getAwardByLocationIdAndMovieId(locationId,movieId);
+        return retrofit.create(IMovieService.class).getAwardByLocationIdAndMovieId(locationId,movieId);
     }
 
     public static Observable<List<DoubanMovieId>> getDoubanMovieIdByMovieName(String movieName) {
@@ -84,7 +81,7 @@ public class MovieService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(IService.class).getDoubanMovieIdByMovieName(movieName);
+        return retrofit.create(IMovieService.class).getDoubanMovieIdByMovieName(movieName);
     }
 
     public static Observable<MaoyanMovieId> getMaoyanMovieIdByMovieName(String movieName) {
@@ -96,7 +93,7 @@ public class MovieService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(IService.class).getMaoyanMovieIdByMovieName(movieName);
+        return retrofit.create(IMovieService.class).getMaoyanMovieIdByMovieName(movieName);
     }
 
     public static Observable<String> getTimeMovieIdByMovieNameAndTime(String movieName , String time) {
@@ -108,17 +105,6 @@ public class MovieService {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(new ToStringConverterFactory())
                 .build();
-        //        http://service.channel.mtime.com/Search.api?
-//         Ajax_CallBack              =true
-//        &Ajax_CallBackType          =Mtime.Channel.Services
-//        &Ajax_CallBackMethod        =GetSearchResult
-//        &Ajax_CrossDomain           =1
-//        &Ajax_RequestUrl            =http://search.mtime.com/search/?q=复仇者联盟&t=2017102115145089883
-//        &Ajax_CallBackArgument0     =复仇者联盟
-//        &Ajax_CallBackArgument1     =0
-//        &Ajax_CallBackArgument2     =373
-//        &Ajax_CallBackArgument3     =0
-//        &Ajax_CallBackArgument4     =1
         String s1 ,s2 ,s3 ,s4,s5,s6,s7,s8,s9,s0;
         s1 = "true";
         s2 = "Mtime.Channel.Services";
@@ -132,7 +118,7 @@ public class MovieService {
         s0 = "1";
 
 
-        return retrofit.create(IService.class).getTimeMovieIdByMovieNameAndTime(s1 ,s2 ,s3 ,s4,s5,s6,s7,s8,s9,s0);
+        return retrofit.create(IMovieService.class).getTimeMovieIdByMovieNameAndTime(s1 ,s2 ,s3 ,s4,s5,s6,s7,s8,s9,s0);
     }
 
     public static Observable<MovieImageAll> getMovieImageAllByMovieId(int movieId) {
@@ -144,7 +130,7 @@ public class MovieService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(IService.class).getMovieImageAllByMovieId(movieId);
+        return retrofit.create(IMovieService.class).getMovieImageAllByMovieId(movieId);
     }
 
     public static Observable<String> getBanaerDataById(String id){
@@ -155,70 +141,67 @@ public class MovieService {
                 .addConverterFactory(new ToStringConverterFactory())
                 .build();
 
-        return retrofit.create(IService.class).getBanaerDataById(id);
+        return retrofit.create(IMovieService.class).getBanaerDataById(id);
     }
 
-    private interface IService {
-        @GET("LocationMovies.api")
-        Observable<ShowingMovie> getShowingMovieByLocationId(
-                @Query("locationId") int locaionId
-        );
+    public static Observable<TodayNewsKeyword> getTodayNewsByKeyword(String keyword) {
 
-        @GET("MovieComingNew.api")
-        Observable<ComingMovie> getComingMovieByLocationId(
-                @Query("locationId") int locaionId
-        );
+        String URL = "https://www.toutiao.com/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-        @GET("Video.api")
-        Observable<TrailerData> getTrailerByPageIndexAndMovieId(
-                @Query("pageIndex") int pageIndex,
-                @Query("movieId") int movieId
-        );
+        int offset = 0 ;
+        String format = "json" ;
+        boolean autoload = true ;
+        int count = 20 ;
+        int cur_tab = 1 ;
 
-        @GET("detail.api")
-        Observable<MovieDetail> getDetailByLocationIdAndMovieId(
-                @Query("locationId") int locationId,
-                @Query("movieId") int movieId
-        );
+        return retrofit.create(IMovieService.class).getTodayNewsByKeyword(offset,format,keyword,autoload,count,cur_tab);
+    }
 
+    public static Observable<XiGuaMovieOriginalData> getXiGuaMovieOriginalDataByKeyword(String keyword) {
 
-        @GET("detail.api")
-        Observable<MovieAward> getAwardByLocationIdAndMovieId(
-                @Query("locationId") int locationId,
-                @Query("movieId") int movieId
-        );
+        String URL = "https://www.ixigua.com/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-        @GET("subject_suggest")
-        Observable<List<DoubanMovieId>> getDoubanMovieIdByMovieName(
-                @Query("q") String movieName);
+        int offset = 0 ;
+        String format = "json" ;
+        boolean autoload = true ;
+        int count = 20 ;
+        int cur_tab = 1 ;
 
-        @GET("suggest")
-        Observable<MaoyanMovieId> getMaoyanMovieIdByMovieName(
-                @Query("kw") String movieName);
+        return retrofit.create(IMovieService.class).getXiGuaMovieOriginalDataByKeyword(format,autoload,count,keyword,cur_tab,offset);
+    }
 
+    public static Observable<TouTiaoVideoOriginalData> getTouTiaoVideoDataByMaxBehotTime(String max_behot_time) {
 
-        @GET("Search.api")
-        Observable<String> getTimeMovieIdByMovieNameAndTime(
-                @Query("Ajax_CallBack") String s1,
-                @Query("Ajax_CallBackType") String s2,
-                @Query("Ajax_CallBackMethod") String s3,
-                @Query("Ajax_CrossDomain") String s4,
-                @Query("Ajax_RequestUrl") String s5,
-                @Query("Ajax_CallBackArgument0") String s6,
-                @Query("Ajax_CallBackArgument1") String s7,
-                @Query("Ajax_CallBackArgument2") String s8,
-                @Query("Ajax_CallBackArgument3") String s9,
-                @Query("Ajax_CallBackArgument4") String s0
-                );
+        String URL = "https://www.ixigua.com/api/pc/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
+        return retrofit.create(IMovieService.class).getTouTiaoVideoDataByMaxBehotTime(max_behot_time,"subv_movie");
+    }
 
-        @GET("ImageAll.api")
-        Observable<MovieImageAll> getMovieImageAllByMovieId(
-                @Query("movieId") int movieId
-        );
+    public static Observable<TouTiaoVideoOriginalData> getTouTiaoVideoDataByMinBehotTime() {
 
-        @GET("p/{id}")
-        Observable<String> getBanaerDataById(@Path("id") String Id);
+        String URL = "https://www.ixigua.com/api/pc/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URL)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(IMovieService.class).getTouTiaoVideoDataByMaxBehotTime("0","subv_movie");
     }
 
 }

@@ -73,4 +73,20 @@ public class MovieManager {
         return MovieService.getBanaerDataById(Id);
     }
 
+    public Observable<TodayNewsKeyword> getTodayNewsByKeyword(@NonNull String keyword) {
+        return MovieService.getTodayNewsByKeyword(keyword);
+    }
+
+    public Observable<XiGuaMovieOriginalData> getXiGuaMovieOriginalDataByKeyword(@NonNull String keyword) {
+        return MovieService.getXiGuaMovieOriginalDataByKeyword(keyword);
+    }
+
+    public Observable<TouTiaoVideoOriginalData> getTouTiaoVideoDataByMaxBehotTime(@NonNull String max_behot_time) {
+        return MovieService.getTouTiaoVideoDataByMaxBehotTime(max_behot_time);
+    }
+
+    public Observable<TouTiaoVideoOriginalData> getTouTiaoVideoDataByMinBehotTime() {
+        return MovieService.getTouTiaoVideoDataByMinBehotTime();
+    }
+
 }

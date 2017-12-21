@@ -1,4 +1,4 @@
-package com.example.administrator.newmovie.Trailer;
+package com.example.administrator.newmovie.Homework;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -8,7 +8,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.newmovie.Data.TouTiaoVideoData;
 import com.example.administrator.newmovie.Data.TrailerData;
+import com.example.administrator.newmovie.Data.XiGuaMovieData;
+import com.example.administrator.newmovie.Trailer.TrailerListCard;
 
 import java.util.List;
 
@@ -16,21 +19,22 @@ import java.util.List;
  * Created by Administrator on 2017/9/23.
  */
 
-public class TrailerRecyclerView extends RecyclerView {
-    private List<TrailerData.VideoListBean> mTrailerDatas ;
-    private TrailerAdapter mAdapter;
+public class VideoRecyclerView extends RecyclerView {
+//    private List<XiGuaMovieData> mXiGuaMovieDatas ;
+    private List<TouTiaoVideoData> mTouTiaoVideoDatas ;
+    private VideoAdapter adapter;
     private String mClassName ;
-    public TrailerRecyclerView(Context context) {
+    public VideoRecyclerView(Context context) {
         super(context);
         initView(context);
     }
 
-    public TrailerRecyclerView(Context context, @Nullable AttributeSet attrs) {
+    public VideoRecyclerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         initView(context);
     }
 
-    public TrailerRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public VideoRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initView(context);
     }
@@ -49,31 +53,41 @@ public class TrailerRecyclerView extends RecyclerView {
         this.mClassName = mClassName;
     }
 
-    public void bindData(List<TrailerData.VideoListBean> trailerDatas){
-        this.mTrailerDatas = trailerDatas ;
-        if (mAdapter == null){
-            mAdapter = new TrailerAdapter();
-            setAdapter(mAdapter);
-        }else mAdapter.notifyDataSetChanged();
+    //    public void bindData(List<XiGuaMovieData> mXiGuaMovieDatas){
+//        this.mXiGuaMovieDatas = mXiGuaMovieDatas ;
+//        if (adapter == null){
+//            adapter = new VideoAdapter();
+//            setAdapter(adapter);
+//        }else adapter.notifyDataSetChanged();
+//    }
+
+
+    public void bindData(List<TouTiaoVideoData> mTouTiaoVideoDatas){
+        this.mTouTiaoVideoDatas = mTouTiaoVideoDatas ;
+        if (adapter == null){
+            adapter = new VideoAdapter();
+            setAdapter(adapter);
+        }else adapter.notifyDataSetChanged();
     }
 
-    private class TrailerAdapter  extends Adapter<ViewHolder>{
+
+    private class VideoAdapter  extends Adapter<ViewHolder>{
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            TrailerListCard view = new TrailerListCard(parent.getContext());
+            VideoListCard view = new VideoListCard(parent.getContext());
             view.setmClassName(mClassName);
             return new TrailerViewHolder(view);
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            ((TrailerListCard)holder.itemView).setmClassName(mClassName);
-            ((TrailerListCard)holder.itemView).bindData(mTrailerDatas.get(position));
+            ((VideoListCard)holder.itemView).setmClassName(mClassName);
+            ((VideoListCard)holder.itemView).bindData(mTouTiaoVideoDatas.get(position));
         }
 
         @Override
         public int getItemCount() {
-            return mTrailerDatas.size();
+            return mTouTiaoVideoDatas.size();
         }
 
         private class TrailerViewHolder extends ViewHolder {

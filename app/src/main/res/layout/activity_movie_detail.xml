@@ -137,6 +137,20 @@
                             android:scaleType="fitXY"
                             android:src="@drawable/poster_frame" />
 
+                        <TextView
+                            android:id="@+id/s1"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:text="7.8"
+                            android:gravity="center"
+                            android:background="@color/green_grade"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="5dp"
+                            android:layout_width="31.7dp"
+                            android:layout_height="25dp" />
+
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -169,11 +183,6 @@
 
                 </RelativeLayout>
 
-                <com.example.administrator.newmovie.CustomView.ScoreView
-                    android:id="@+id/s1"
-                    android:layout_margin="5dp"
-                    android:layout_width="31.7dp"
-                    android:layout_height="25dp" />
 
                 <!--票房纪录-->
                 <com.example.administrator.newmovie.BoxOfficeCard
@@ -298,11 +307,11 @@
                         android:drawableRight="@drawable/icon_more_right" />
                 </RelativeLayout>
 
-                <com.example.administrator.newmovie.CustomView.MyVideoPlayerStandard
+                <com.example.administrator.newmovie.NewJZVideoPlayerStandard
                     android:id="@+id/trailer_player"
                     android:layout_below="@+id/r_video"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"></com.example.administrator.newmovie.CustomView.MyVideoPlayerStandard>
+                    android:layout_height="200dp"/>
 
 
             </RelativeLayout>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.administrator.newmovie.R;
+import com.trello.rxlifecycle.components.RxFragment;
 
 /**
  * Created by Administrator on 2017/9/13.

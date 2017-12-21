@@ -1,43 +1,21 @@
 package com.example.administrator.newmovie;
 
 
-import android.icu.text.SimpleDateFormat;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.MainThread;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.example.administrator.newmovie.Data.DoubanMovieId;
-import com.example.administrator.newmovie.Data.MaoyanMovieId;
-import com.example.administrator.newmovie.Data.MovieManager;
-import com.example.administrator.newmovie.Data.TimeMovieId;
 import com.example.administrator.newmovie.Home.HomeFragment;
-import com.example.administrator.newmovie.Homework.HomeworkFragment;
+import com.example.administrator.newmovie.Homework.HomeworkFragmentV2;
 import com.example.administrator.newmovie.Me.MeFragment;
-import com.example.administrator.newmovie.NetWork.NetworkHelper;
 import com.example.administrator.newmovie.Review.ReViewFragment;
-import com.example.administrator.newmovie.Utils.LogUtil;
-import com.example.administrator.newmovie.Utils.TimeUtil;
-import com.google.gson.Gson;
-
-import java.util.Date;
-import java.util.List;
-
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity {
 
@@ -94,7 +72,7 @@ public class MainActivity extends BaseActivity {
                         fragment = new ReViewFragment();
                         break;
                     case HOME_WORK:
-                        fragment = new HomeworkFragment();
+                        fragment = new HomeworkFragmentV2();
                         break;
 
                     case ME_TAB:

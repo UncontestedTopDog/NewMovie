@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +13,11 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.example.administrator.newmovie.Data.MovieImageAll;
 import com.example.administrator.newmovie.MyPhotoView.PhotoView;
-import com.example.administrator.newmovie.StagePhoto.StagePhotoRecyclerView;
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieImageDetailActivity extends AppCompatActivity {
+public class MovieImageDetailActivity extends BaseActivity {
 
     private ImagePagerAdapter imagePagerAdapter;
     private List<String> imageList = new ArrayList<>();
@@ -60,19 +55,20 @@ public class MovieImageDetailActivity extends AppCompatActivity {
             PhotoView photoView = new PhotoView(container.getContext());
             photoView.setZoomable(true);
             photoView.setBackgroundColor(Color.BLACK);
-            Glide.with(MovieImageDetailActivity.this)
-                    .load(imageList.get(position))
-                    .centerCrop()
-                    .placeholder(R.drawable.no_pictrue)
-                    .error(R.drawable.download_fail_hint)
-                    .crossFade()
-                    .into(new GlideDrawableImageViewTarget(photoView) {
-                              @Override
-                              public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
-                                  super.onResourceReady(drawable, anim);
-                              }
-                          }
-                    );
+//            Glide.with(MovieImageDetailActivity.this)
+//                    .load(imageList.get(position))
+//                    .centerCrop()
+//                    .placeholder(R.drawable.no_pictrue)
+//                    .error(R.drawable.download_fail_hint)
+//                    .crossFade()
+//                    .into(new GlideDrawableImageViewTarget(photoView) {
+//                              @Override
+//                              public void onResourceReady(GlideDrawable drawable, GlideAnimation anim) {
+//                                  super.onResourceReady(drawable, anim);
+//                              }
+//                          }
+//                    );
+            photoView.setImageURI(Uri.parse(imageList.get(position)));
             container.addView(photoView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             imageAmount.setText(position+"/"+imageList.size());
             return photoView;

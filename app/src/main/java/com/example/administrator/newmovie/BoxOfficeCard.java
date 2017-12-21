@@ -12,11 +12,12 @@ import com.example.administrator.newmovie.Data.MovieDetail;
  */
 
 public class BoxOfficeCard extends LinearLayout {
-    private TextView ranking ;
-    private TextView todayBoxDes ;
-    private TextView totalBoxDes ;
-    private TextView todayBoxDesUnit ;
-    private TextView totalBoxDesUnit ;
+    private TextView ranking;
+    private TextView todayBoxDes;
+    private TextView totalBoxDes;
+    private TextView todayBoxDesUnit;
+    private TextView totalBoxDesUnit;
+
     public BoxOfficeCard(Context context) {
         super(context);
         initView();
@@ -33,7 +34,7 @@ public class BoxOfficeCard extends LinearLayout {
     }
 
     private void initView() {
-        inflate(getContext(), R.layout.box_office_card,this);
+        inflate(getContext(), R.layout.box_office_card, this);
         ranking = (TextView) findViewById(R.id.box_office_ranking);
         todayBoxDes = (TextView) findViewById(R.id.today_box_des);
         totalBoxDes = (TextView) findViewById(R.id.total_box_des);
@@ -41,13 +42,17 @@ public class BoxOfficeCard extends LinearLayout {
         totalBoxDesUnit = (TextView) findViewById(R.id.total_box_des_unit);
     }
 
-    public void bindData(MovieDetail.DataBean.BoxOfficeBean boxOfficeBean){
-        if (boxOfficeBean.getTodayBoxDes()!=null){
-        ranking.setText(boxOfficeBean.getRanking()+"");
-        todayBoxDes.setText(boxOfficeBean.getTotalBoxDes()+"");
-        totalBoxDes.setText(boxOfficeBean.getTotalBoxDes()+"");
-        todayBoxDesUnit.setText(boxOfficeBean.getTodayBoxDesUnit()+"");
-        totalBoxDesUnit.setText(boxOfficeBean.getTotalBoxUnit()+"");}
-        else setVisibility(GONE);
+    public void bindData(MovieDetail.DataBean.BoxOfficeBean boxOfficeBean) {
+        if (boxOfficeBean.getRanking() == 0) {
+            setVisibility(GONE);
+            return;
+        }
+        if (boxOfficeBean.getTodayBoxDes() != null) {
+            ranking.setText(boxOfficeBean.getRanking() + "");
+            todayBoxDes.setText(boxOfficeBean.getTodayBoxDes() + "");
+            totalBoxDes.setText(boxOfficeBean.getTotalBoxDes() + "");
+            todayBoxDesUnit.setText(boxOfficeBean.getTodayBoxDesUnit() + "");
+            totalBoxDesUnit.setText(boxOfficeBean.getTotalBoxUnit() + "");
+        } else setVisibility(GONE);
     }
 }

@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.example.administrator.newmovie.R;
@@ -25,6 +26,7 @@ public class ScoreView extends View {
     int secondY;
     int firstSize;
     int secondSize;
+    int score = 55 ;
 
     public ScoreView(Context context) {
         super(context);
@@ -52,15 +54,22 @@ public class ScoreView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.GREEN);
+        if (score == 0)
+            return;
+        Log.i("QWE",score+"");
         Bitmap source = BitmapFactory.decodeResource(getResources(), R.drawable.android_font);
-        Bitmap bitmap = Bitmap.createBitmap(source, 7 * source.getWidth() / 10, 0, source.getWidth() / 10, source.getHeight());
+        Bitmap bitmap = Bitmap.createBitmap(source, (score/10-1) * source.getWidth() / 10, 0, source.getWidth() / 10, source.getHeight());
         bitmap = Bitmap.createScaledBitmap(bitmap, firstSize, firstSize*bitmap.getHeight()/bitmap.getWidth(), false);
         canvas.drawBitmap(bitmap, firstX, firstY, null);
-        bitmap = Bitmap.createBitmap(source, 8 * source.getWidth() / 10, 0, source.getWidth() / 10, source.getHeight());
+        bitmap = Bitmap.createBitmap(source, (score%10+1) * source.getWidth() / 10, 0, source.getWidth() / 10, source.getHeight());
         bitmap = Bitmap.createScaledBitmap(bitmap, secondSize, secondSize*bitmap.getHeight()/bitmap.getWidth(), false);
         canvas.drawBitmap(bitmap, secondX, secondY, null);
     }
