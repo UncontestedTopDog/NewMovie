@@ -1,5 +1,25 @@
 <resources>
-    <string name="app_name">MyMovie</string>
+    <string name="app_name">IMovie</string>
+    <string name="a_moment_ago">刚刚</string>
+    <string name="minutes_before">分钟前</string>
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+
+    <!--time units-->
+    <string name="unit_year">年</string>
+    <string name="unit_month">月</string>
+    <string name="unit_day">日</string>
+    <string name="unit_day2">天</string>
+    <string name="unit_week">周</string>
+    <string name="unit_hour">小时</string>
+    <string name="unit_minute">分钟</string>
+    <string name="day_1_of_week">周一</string>
+    <string name="day_2_of_week">周二</string>
+    <string name="day_3_of_week">周三</string>
+    <string name="day_4_of_week">周四</string>
+    <string name="day_5_of_week">周五</string>
+    <string name="day_6_of_week">周六</string>
+    <string name="day_7_of_week">周日</string>
     <string name="net_error_notice">网络连接不可用，请检查您的网络设置</string>
     <string name="synopsis">剧情：改编自真实事件，讲述天才高中生小琳专门为同学作弊牟取暴利，她接下一个天价委托，要在国际会考上跨国为富家公子作弊，小琳找另一名记忆力极佳的天才学生班克，策划一场跨时区的完美作弊！</string>
 </resources>

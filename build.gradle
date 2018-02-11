@@ -38,6 +38,8 @@ buildscript {
         lib_gson = "com.google.code.gson:gson:2.7"
         lib_glide = 'com.github.bumptech.glide:glide:3.7.0'
 
+        lib_joda_time = "joda-time:joda-time:2.9.9"
+
     } //ext
 
 }

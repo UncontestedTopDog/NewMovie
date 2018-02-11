@@ -10,6 +10,11 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 
+/**
+ * Created by huangweiliang on 18/02/11.
+ * Des:尺寸工具
+ */
+
 public class DimensionUtil {
 
     public static float dipToPxF(Context context, float dpValue) {
